@@ -5,7 +5,7 @@ import { Box, BoxProps, CircularProgress } from '@mui/material';
 import { StyledLoader } from './Loader.styled.ts';
 import { LoaderUiType } from './Loader.types.ts';
 import {UiTypeProps} from "../../types";
-import {TypographyType, Typography} from "../Typography";
+import { Typography} from "../Typography";
 
 export interface LoaderProps extends UiTypeProps<typeof LoaderUiType> {
   text?: string;
@@ -43,7 +43,7 @@ export const Loader: FC<LoaderProps> = ({
         >
           <CircularProgress size={size} disableShrink />
           {withText && (
-            <Typography type={TypographyType.text_12_400_primary_06}>{text}</Typography>
+            <Typography uiType={'text_12_400_primary_06'}>{text}</Typography>
           )}
         </Box>
       );
@@ -62,7 +62,7 @@ export const Loader: FC<LoaderProps> = ({
         >
           <StyledLoader size={size} />
           {withText && (
-            <Typography type={TypographyType.text_12_400_primary_06}>{text}</Typography>
+            <Typography uiType={'text_12_400_primary_06'}>{text}</Typography>
           )}
         </Box>
       );
