@@ -9,7 +9,8 @@ import {UiTypeProps} from "../../types";
 export type InputProps = TextFieldProps & UiTypeProps<typeof InputUiType>;
 
 export const Input: FC<InputProps> = (props) => {
-  const { uiType = InputUiType.default, ...otherProps } = props;
+  const { uiType, ...otherProps } = props;
+
   switch (uiType) {
     case InputUiType.third:
       return <StyledInput className={uiType} {...otherProps} />;
