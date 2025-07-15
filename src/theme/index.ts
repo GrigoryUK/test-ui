@@ -1,2 +1,2 @@
-export {themeAdvertiser} from "./themeAdvertiser.ts";
+export * from "./themeAdvertiser.ts";
 
