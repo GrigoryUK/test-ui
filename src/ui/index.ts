@@ -1,3 +1,5 @@
 export * from "./Button";
-export * from "./Name";
+export * from "./Input";
+export * from "./Loader";
+export * from "./Typography";
 
