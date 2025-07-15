@@ -4,7 +4,9 @@
   "description": "A simple template for a custom React component library",
   "type": "module",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "patch": "npm version patch",
+    "publish": "npm publish"
   },
   "author": "Author",
   "license": "ISC",

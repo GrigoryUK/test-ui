@@ -11,10 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "lib": ["dom", "dom.iterable", "esnext"],
-
-
-
-    "noEmit": false,
+    "noEmit": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
