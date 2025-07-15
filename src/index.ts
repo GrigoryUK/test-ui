@@ -1,2 +1,1 @@
-export {Button } from "./ui";
-export type {ButtonProps} from './ui';
+export * from "./ui";
