@@ -1,4 +1,4 @@
-export const enum ELoaderUiType {
-  default = 'default',
-  circle = 'circle',
-}
+export const LoaderUiType = {
+  default:  'default',
+  circle: 'circle',
+} as const;

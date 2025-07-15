@@ -1,5 +1,5 @@
-export const enum EInputUiType {
-  default = 'default',
-  secondary = 'secondary',
-  third = 'third',
-}
+export const InputUiType = {
+  default:  'default',
+  secondary:  'secondary',
+  third: 'third',
+} as const;

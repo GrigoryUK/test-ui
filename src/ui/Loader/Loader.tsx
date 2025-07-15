@@ -3,11 +3,11 @@ import React, { FC } from 'react';
 import { Box, BoxProps, CircularProgress } from '@mui/material';
 
 import { StyledLoader } from './Loader.styled.ts';
-import { ELoaderUiType } from './Loader.types.ts';
-import {IUiType} from "../../types";
-import {ETypographyType, Typography} from "../Typography";
+import { LoaderUiType } from './Loader.types.ts';
+import {UiTypeProps} from "../../types";
+import {TypographyType, Typography} from "../Typography";
 
-export interface LoaderProps extends IUiType<ELoaderUiType> {
+export interface LoaderProps extends UiTypeProps<typeof LoaderUiType> {
   text?: string;
   boxProps?: BoxProps;
   height?: string | number;
@@ -29,7 +29,7 @@ export const Loader: FC<LoaderProps> = ({
 }: LoaderProps) => {
 
   switch (uiType) {
-    case ELoaderUiType.circle:
+    case LoaderUiType.circle:
       return (
         <Box
           display={'flex'}
@@ -43,11 +43,11 @@ export const Loader: FC<LoaderProps> = ({
         >
           <CircularProgress size={size} disableShrink />
           {withText && (
-            <Typography type={ETypographyType.text_12_400_primary_06}>{text}</Typography>
+            <Typography type={TypographyType.text_12_400_primary_06}>{text}</Typography>
           )}
         </Box>
       );
-    case ELoaderUiType.default:
+    case LoaderUiType.default:
     default:
       return (
         <Box
@@ -62,7 +62,7 @@ export const Loader: FC<LoaderProps> = ({
         >
           <StyledLoader size={size} />
           {withText && (
-            <Typography type={ETypographyType.text_12_400_primary_06}>{text}</Typography>
+            <Typography type={TypographyType.text_12_400_primary_06}>{text}</Typography>
           )}
         </Box>
       );

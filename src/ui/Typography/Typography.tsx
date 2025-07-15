@@ -2,20 +2,20 @@ import React, { FC } from 'react';
 
 import { alpha, Typography as TypographyMui, TypographyProps, useTheme } from '@mui/material';
 
-import { ETypographyType } from './Typography.types.ts';
+import { TypographyType } from './Typography.types.ts';
+import {UiTypeProps} from "../../types";
 
-export interface ITypography extends TypographyProps {
+export interface ITypography extends TypographyProps, UiTypeProps<typeof TypographyType> {
   children: React.ReactNode;
-  type?: ETypographyType;
 }
 
 export const Typography: FC<ITypography> = (props) => {
-  const { children, type, color, ...otherProps } = props;
+  const { children, uiType, color, ...otherProps } = props;
 
   const theme = useTheme();
 
-  switch (type) {
-    case ETypographyType.title_27_400_primary_037:
+  switch (uiType) {
+    case TypographyType.title_27_400_primary_037:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.37)}`}
@@ -28,7 +28,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.title_24_600_primary:
+    case TypographyType.title_24_600_primary:
       return (
         <TypographyMui
           color={color ?? theme.palette.text.primary}
@@ -41,7 +41,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.title_20_600_primary:
+    case TypographyType.title_20_600_primary:
       return (
         <TypographyMui
           color={color ?? theme.palette.text.primary}
@@ -54,7 +54,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.title_20_600_primary_087:
+    case TypographyType.title_20_600_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -67,7 +67,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_700_primary_087:
+    case TypographyType.subtitle_16_700_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -80,7 +80,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_600_primary:
+    case TypographyType.subtitle_16_600_primary:
       return (
         <TypographyMui
           color={color ?? theme.palette.text.primary}
@@ -93,7 +93,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_600_primary_087:
+    case TypographyType.subtitle_16_600_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -106,7 +106,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_400_primary:
+    case TypographyType.subtitle_16_400_primary:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.text.primary}`}
@@ -119,7 +119,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_500_primary_087:
+    case TypographyType.subtitle_16_500_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -132,7 +132,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_400_primary_087:
+    case TypographyType.subtitle_16_400_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -145,7 +145,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_400_grey_500:
+    case TypographyType.subtitle_16_400_grey_500:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.grey['500']}`}
@@ -158,7 +158,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.subtitle_16_400_primary_037:
+    case TypographyType.subtitle_16_400_primary_037:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.37)}`}
@@ -171,7 +171,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_14_400_primary_087:
+    case TypographyType.text_14_400_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -183,7 +183,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_14_500_primary_06:
+    case TypographyType.text_14_500_primary_06:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.6)}`}
@@ -196,7 +196,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_14_400_primary_06:
+    case TypographyType.text_14_400_primary_06:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.6)}`}
@@ -209,7 +209,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_12_400_primary_087:
+    case TypographyType.text_12_400_primary_087:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.87)}`}
@@ -222,7 +222,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_12_400_primary_06:
+    case TypographyType.text_12_400_primary_06:
       return (
         <TypographyMui
           color={color ?? `${alpha(theme.palette.text.primary, 0.6)}`}
@@ -235,7 +235,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_10_400_secondary:
+    case TypographyType.text_10_400_secondary:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.lightGray.main}`}
@@ -248,7 +248,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_10_400_white:
+    case TypographyType.text_10_400_white:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.common.white}`}
@@ -261,7 +261,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_10_400_black:
+    case TypographyType.text_10_400_black:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.common.black}`}
@@ -274,7 +274,7 @@ export const Typography: FC<ITypography> = (props) => {
           {children}
         </TypographyMui>
       );
-    case ETypographyType.text_6_400_secondary:
+    case TypographyType.text_6_400_secondary:
       return (
         <TypographyMui
           color={color ?? `${theme.palette.lightGray.main}`}

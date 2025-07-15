@@ -1,6 +1,6 @@
-export const enum EButtonUiType {
-  default = 'default',
-  primary = 'primary',
-  shadow = 'shadow',
-  viewAll = 'viewAll',
-}
+export const ButtonUiType = {
+  default: 'default',
+  primary: 'primary',
+  shadow: 'shadow',
+  viewAll:  'viewAll',
+} as const;

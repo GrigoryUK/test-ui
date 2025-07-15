@@ -3,20 +3,20 @@ import React, { FC } from 'react';
 import { TextFieldProps } from '@mui/material';
 
 import { StyledInput } from './Input.styled.ts';
-import { EInputUiType } from './Input.types.ts';
-import {IUiType} from "../../types";
+import { InputUiType } from './Input.types.ts';
+import {UiTypeProps} from "../../types";
 
-export type InputProps = TextFieldProps & IUiType<EInputUiType>;
+export type InputProps = TextFieldProps & UiTypeProps<typeof InputUiType>;
 
 export const Input: FC<InputProps> = (props) => {
-  const { uiType = EInputUiType.default, ...otherProps } = props;
+  const { uiType = InputUiType.default, ...otherProps } = props;
   switch (uiType) {
-    case EInputUiType.third:
+    case InputUiType.third:
       return <StyledInput className={uiType} {...otherProps} />;
-    case EInputUiType.secondary:
+    case InputUiType.secondary:
       return <StyledInput className={uiType} {...otherProps} />;
-    case EInputUiType.default:
+    case InputUiType.default:
     default:
       return <StyledInput size={'medium'} className={uiType} {...otherProps} />;
-  } 
+  }
 };
