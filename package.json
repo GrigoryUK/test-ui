@@ -6,7 +6,9 @@
   "scripts": {
     "build": "rollup -c",
     "patch": "npm version patch",
-    "publish": "npm publish"
+    "publish": "npm publish",
+    "storybook": "storybook dev -p 6006",
+    "storybook-build": "storybook build"
   },
   "author": "Author",
   "license": "ISC",
@@ -18,6 +20,10 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
+    "@storybook/addon-docs": "^9.0.17",
+    "@storybook/addon-themes": "^9.0.17",
+    "@storybook/react": "^9.0.17",
+    "@storybook/react-vite": "^9.0.17",
     "@types/node": "^24.0.13",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",

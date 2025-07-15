@@ -30,3 +30,6 @@ dist-ssr
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+*storybook.log
+storybook-static

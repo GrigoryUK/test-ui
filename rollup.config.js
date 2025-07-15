@@ -23,9 +23,9 @@ export default [
             },
         ],
         plugins: [
-            resolve(),
+            resolve(), 
             commonjs(),
-            typescript({ tsconfig: "./tsconfig.json" }),
+            typescript({ tsconfig: "./tsconfig.json", exclude: ["**/*.stories.tsx", "**/*.stories.ts", "**/*.stories.mdx", "**/*.stories.md", "**/*.stories.js", "**/*.stories.jsx", "**/*.stories.json", "**/*.stories.css"] }),
             terser(),
         ],
         external: ['react', 'react-dom', '@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],

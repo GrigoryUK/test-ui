@@ -49,7 +49,7 @@ const advertiserPalette: Pick<ThemeOptions, 'palette'>= {
 }
 
 
-export const getThemeAdvertiser = (): ThemeOptions => {
+export const getThemeOperator = (): ThemeOptions => {
     return {
         ...commonTypography,
         ...advertiserPalette,

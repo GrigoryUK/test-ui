@@ -29,6 +29,19 @@
     "allowImportingTsExtensions": true,
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.mdx",
+    "**/*.stories.md",
+    "**/*.stories.js",
+    "**/*.stories.jsx",
+    "**/*.stories.json",
+    "**/*.stories.css",
+  ]
 
 }
