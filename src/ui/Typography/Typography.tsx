@@ -1,29 +1,41 @@
 import React, { FC } from 'react';
 
-import { alpha, Typography as TypographyMui, TypographyProps, useTheme } from '@mui/material';
+import { alpha, Typography as TypographyMui, TypographyProps as TypographyPropsMui, useTheme } from '@mui/material';
 
 import { TypographyType } from './Typography.types.ts';
 import {UiTypeProps} from "../../types";
+import {OverridableStringUnion} from "@mui/types";
+import {Variant} from "@mui/material/styles/createTypography";
+import {TypographyPropsVariantOverrides} from "@mui/material/Typography/Typography";
 
-export interface ITypography extends TypographyProps, UiTypeProps<typeof TypographyType> {
+export interface TypographyProps extends TypographyPropsMui, UiTypeProps<typeof TypographyType> {
   children: React.ReactNode;
 }
 
-export const Typography: FC<ITypography> = (props) => {
+export const Typography: FC<TypographyProps> = (props) => {
   const { children, uiType, color, ...otherProps } = props;
 
   const theme = useTheme();
 
+  const onGetStyles = ( fontSize: number | string, fontWeight: number | string, customColor: string,  alphaOpacity?: number, variant?: OverridableStringUnion<Variant | 'inherit', TypographyPropsVariantOverrides>): TypographyPropsMui => {
+
+    return {
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      lineHeight: 1.3,
+      color: color ?? `${alpha(customColor, alphaOpacity ?? 1)}`,
+      variant: variant ?? 'body2',
+      ...otherProps,
+    }
+  }
+
+
   switch (uiType) {
     case TypographyType.title_27_400_primary_037:
+
       return (
         <TypographyMui
-          color={color ?? `${alpha(theme.palette.text.primary, 0.37)}`}
-          fontWeight={400}
-          lineHeight={1.3}
-          fontSize={27}
-          variant={'h5'}
-          {...otherProps}
+            {...onGetStyles(27, 400, theme.palette.text.primary, 0.37, 'h5')}
         >
           {children}
         </TypographyMui>
@@ -31,12 +43,7 @@ export const Typography: FC<ITypography> = (props) => {
     case TypographyType.title_24_600_primary:
       return (
         <TypographyMui
-          color={color ?? theme.palette.text.primary}
-          fontWeight={600}
-          lineHeight={1.3}
-          fontSize={24}
-          variant={'body2'}
-          {...otherProps}
+            {...onGetStyles(24, 400, theme.palette.text.primary )}
         >
           {children}
         </TypographyMui>
