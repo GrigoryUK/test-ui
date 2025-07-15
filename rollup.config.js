@@ -28,6 +28,7 @@ export default [
             typescript({ tsconfig: "./tsconfig.json" }),
             terser(),
         ],
+        external: ['react', 'react-dom', '@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],
     },
     {
         input: 'src/index.ts',
