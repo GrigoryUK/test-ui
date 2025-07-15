@@ -1,1 +1,2 @@
-export * from "./ui";
+export {Button } from "./ui";
+export type {ButtonProps} from './ui';
