@@ -1,10 +1,12 @@
-import type { Preview } from "@storybook/react-vite";
-import { getThemeDecorator } from "./decorators/themeDecorator";
-import "./styles/storybook.css";
+import type { Preview } from '@storybook/react-vite';
+
+import './styles/storybook.css';
+
+import { onGetThemeDecorator } from './decorators/theme.decorator';
 
 const preview: Preview = {
- parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -12,9 +14,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [
-    getThemeDecorator(),
-  ],
+  decorators: [onGetThemeDecorator()],
 };
 
 export default preview;

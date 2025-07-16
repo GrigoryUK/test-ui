@@ -1,4 +1,1 @@
-export * from "./themeAdvertiser.ts";
-export * from "./themeOperator.ts";
-export * from "./themeAdvertiserDark.ts";
-
+export * from './theme.root.ts';

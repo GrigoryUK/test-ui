@@ -4,16 +4,16 @@ import { Box, BoxProps, CircularProgress } from '@mui/material';
 
 import { StyledLoader } from './Loader.styled.ts';
 import { LoaderUiType } from './Loader.types.ts';
-import {UiTypeProps} from "../../types";
-import { Typography} from "../Typography";
+import { Text } from '../Text';
+import { UiTypeProps } from '../../types';
 
 export interface LoaderProps extends UiTypeProps<typeof LoaderUiType> {
-  text?: string;
   boxProps?: BoxProps;
   height?: string | number;
   maxWidth?: string | number;
   withText?: boolean;
   size?: number;
+  text?: string;
 }
 
 const HEIGHT = 300;
@@ -27,7 +27,6 @@ export const Loader: FC<LoaderProps> = ({
   uiType,
   size = 48,
 }: LoaderProps) => {
-
   switch (uiType) {
     case LoaderUiType.circle:
       return (
@@ -42,9 +41,7 @@ export const Loader: FC<LoaderProps> = ({
           {...boxProps}
         >
           <CircularProgress size={size} disableShrink />
-          {withText && (
-            <Typography uiType={'text_12_400_primary_06'}>{text}</Typography>
-          )}
+          {withText && <Text uiType={'text_12_400_primary_06'}>{text}</Text>}
         </Box>
       );
     case LoaderUiType.default:
@@ -61,9 +58,7 @@ export const Loader: FC<LoaderProps> = ({
           {...boxProps}
         >
           <StyledLoader size={size} />
-          {withText && (
-            <Typography uiType={'text_12_400_primary_06'}>{text}</Typography>
-          )}
+          {withText && <Text uiType={'text_12_400_primary_06'}>{text}</Text>}
         </Box>
       );
   }

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
-import { ButtonProps as  ButtonPropsMui } from '@mui/material';
+import { ButtonProps as ButtonPropsMui } from '@mui/material';
 import clsx from 'clsx';
 
 import { StyledButton } from './Button.styled.ts';
-import {UiTypeProps} from "../../types";
-import {ButtonUiType} from "./Button.types.ts";
+import { ButtonUiType } from './Button.types.ts';
+import { UiTypeProps } from '../../types';
 
 export interface ButtonProps extends ButtonPropsMui, UiTypeProps<typeof ButtonUiType> {}
 
