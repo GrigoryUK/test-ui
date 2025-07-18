@@ -1,8 +1,10 @@
 import React from "react";
-import { Button } from "./Button";
-import { ButtonUiType } from "./Button.types";
-import { ButtonProps } from "./Button";
+
 import type { StoryFn } from "@storybook/react";
+
+import { Button } from "./Button";
+import { ButtonProps } from "./Button";
+import { ButtonUiType } from "./Button.types";
 
 
 export default {
