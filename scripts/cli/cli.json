@@ -32,6 +32,10 @@
     {
       "message": "Проверка + fix prettier (prettier \\\"src/**/*.{js,jsx,ts,tsx,css,scss}\\\" --write)",
       "value": "npm run format"
+    },
+    {
+      "message": "Удаление папки dist (rm -rf dist)",
+      "value": "npm run delete:dist"
     }
   ]
 }
