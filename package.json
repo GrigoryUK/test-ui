@@ -13,7 +13,9 @@
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss}\" --write",
     "cli": "node scripts/cli/cli.js",
-    "delete:dist": "rm -rf dist"
+    "generate": "node scripts/generate/generate.js",
+    "delete:dist": "rm -rf dist",
+    "generate:ui": "plop component"
   },
   "engines": {
     "node": "22.12.x"
@@ -44,6 +46,7 @@
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.11.0",
+    "plop": "^4.0.1",
     "prettier": "3.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

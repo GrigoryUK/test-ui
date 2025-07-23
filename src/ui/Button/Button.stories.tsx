@@ -15,6 +15,7 @@ const meta: Meta<typeof Button> = {
     variant: 'contained',
     fullWidth: false,
     disabled: false,
+    children: 'Button',
   },
   argTypes: {
     uiType: {
@@ -37,28 +38,24 @@ const Template: StoryFn<ButtonProps> = (args: ButtonProps) => <Button {...args} 
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Button',
   uiType: ButtonUiType.default,
   variant: 'contained',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Button',
   uiType: ButtonUiType.primary,
   variant: 'contained',
 };
 
 export const Shadow = Template.bind({});
 Shadow.args = {
-  children: 'Button',
   uiType: ButtonUiType.shadow,
   variant: 'contained',
 };
 
 export const ViewAll = Template.bind({});
 ViewAll.args = {
-  children: 'Button',
   uiType: ButtonUiType.viewAll,
   variant: 'text',
 };

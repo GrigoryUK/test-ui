@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 
 const { Select } = require('enquirer');
 
-const jsonData = require('./cli.json');
+const jsonData = require('./generate.json');
 
 const initPrompt = new Select({
   name: 'init',

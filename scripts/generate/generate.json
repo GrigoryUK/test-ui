@@ -1,0 +1,9 @@
+{
+  "welcome": "Developer, добро пожаловать в cli. Выберите опцию:",
+  "initOptions": [
+    {
+      "message": "Создания шаблона ui компонента (npm run generate:ui)",
+      "value": "npm run generate:ui"
+    }
+  ]
+}

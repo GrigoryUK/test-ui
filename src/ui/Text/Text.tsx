@@ -23,11 +23,12 @@ export const Text: FC<TextProps> = (props) => {
     customColor: string,
     alphaOpacity?: number,
     variant?: OverridableStringUnion<Variant | 'inherit', TypographyPropsVariantOverrides>,
+    lineHeight?: number,
   ): TypographyPropsMui => {
     return {
       fontSize: fontSize,
       fontWeight: fontWeight,
-      lineHeight: 1.3,
+      lineHeight: lineHeight ?? 1.3,
       color: (color ?? !alphaOpacity) ? customColor : `${alpha(customColor, alphaOpacity)}`,
       variant: variant ?? 'body2',
       ...otherProps,
