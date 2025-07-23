@@ -26,7 +26,7 @@ export default [
     ],
     plugins: [
       svgr({ exportType: 'named', dimensions: false, svgo: false, typescript: true }),
-      css({ output: 'main.css' }),
+      css({ output: 'AdTargetComponents.css' }),
       resolve(),
       commonjs(),
       typescript({
@@ -42,7 +42,6 @@ export default [
           '**/*.stories.css',
         ],
       }),
-
       terser(),
     ],
     external: ['react', 'react-dom', '@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],

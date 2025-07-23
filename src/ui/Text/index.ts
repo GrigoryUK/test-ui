@@ -1,2 +1,2 @@
 export * from './Text.tsx';
-export * from './Text.types.ts';
+export * from './Text.types';

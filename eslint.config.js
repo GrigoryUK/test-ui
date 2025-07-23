@@ -65,7 +65,7 @@ export default tseslint.config(
 
             ['^date-fns'],
 
-            ['^', '^ui', '^utils', '^types', '^theme', '^icons'],
+            ['^', '^ui', '^types', '^theme', '^icons'],
             [
               '^',
               '^\\./?$',

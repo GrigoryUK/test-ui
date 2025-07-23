@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 
-import { alpha, Typography as TypographyMui, TypographyProps as TypographyPropsMui, useTheme } from '@mui/material';
-import { Variant } from '@mui/material/styles/createTypography';
-import { TypographyPropsVariantOverrides } from '@mui/material/Typography/Typography';
-import { OverridableStringUnion } from '@mui/types';
+import { alpha, Typography, TypographyProps, useTheme } from '@mui/material';
 
 import { TextUiType } from './Text.types.ts';
 import { UiTypeProps } from '../../types';
 
-export interface TextProps extends TypographyPropsMui, UiTypeProps<typeof TextUiType> {
+export interface TextProps extends TypographyProps, UiTypeProps<typeof TextUiType> {
   children: React.ReactNode;
 }
 
@@ -22,9 +19,9 @@ export const Text: FC<TextProps> = (props) => {
     fontWeight: number | string,
     customColor: string,
     alphaOpacity?: number,
-    variant?: OverridableStringUnion<Variant | 'inherit', TypographyPropsVariantOverrides>,
+    variant?: any,
     lineHeight?: number,
-  ): TypographyPropsMui => {
+  ): TypographyProps => {
     return {
       fontSize: fontSize,
       fontWeight: fontWeight,
@@ -37,54 +34,52 @@ export const Text: FC<TextProps> = (props) => {
 
   switch (uiType) {
     case TextUiType.title_27_400_primary_037:
-      return (
-        <TypographyMui {...onGetStyles(27, 400, theme.palette.text.primary, 0.37, 'h5')}>{children}</TypographyMui>
-      );
+      return <Typography {...onGetStyles(27, 400, theme.palette.text.primary, 0.37, 'h5')}>{children}</Typography>;
     case TextUiType.title_24_600_primary:
-      return <TypographyMui {...onGetStyles(24, 400, theme.palette.text.primary)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(24, 400, theme.palette.text.primary)}>{children}</Typography>;
     case TextUiType.title_20_600_primary:
-      return <TypographyMui {...onGetStyles(20, 600, theme.palette.text.primary)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(20, 600, theme.palette.text.primary)}>{children}</Typography>;
     case TextUiType.title_20_600_primary_087:
-      return <TypographyMui {...onGetStyles(20, 600, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(20, 600, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.subtitle_16_700_primary_087:
-      return <TypographyMui {...onGetStyles(16, 700, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 700, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.subtitle_16_600_primary:
-      return <TypographyMui {...onGetStyles(16, 600, theme.palette.text.primary)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 600, theme.palette.text.primary)}>{children}</Typography>;
     case TextUiType.subtitle_16_600_primary_087:
-      return <TypographyMui {...onGetStyles(16, 600, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 600, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.subtitle_16_500_primary_087:
-      return <TypographyMui {...onGetStyles(16, 500, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 500, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.subtitle_16_400_primary:
-      return <TypographyMui {...onGetStyles(16, 400, theme.palette.text.primary)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary)}>{children}</Typography>;
     case TextUiType.subtitle_16_400_primary_087:
-      return <TypographyMui {...onGetStyles(16, 400, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.subtitle_16_400_grey_500:
-      return <TypographyMui {...onGetStyles(16, 400, theme.palette.grey['500'])}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 400, theme.palette.grey['500'])}>{children}</Typography>;
     case TextUiType.subtitle_16_400_primary_037:
-      return <TypographyMui {...onGetStyles(16, 400, theme.palette.text.primary, 0.37)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary, 0.37)}>{children}</Typography>;
     case TextUiType.text_14_400_primary_087:
-      return <TypographyMui {...onGetStyles(14, 400, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(14, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.text_14_500_primary_06:
-      return <TypographyMui {...onGetStyles(14, 500, theme.palette.text.primary, 0.6)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(14, 500, theme.palette.text.primary, 0.6)}>{children}</Typography>;
     case TextUiType.text_14_400_primary_06:
-      return <TypographyMui {...onGetStyles(14, 400, theme.palette.text.primary, 0.6)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(14, 400, theme.palette.text.primary, 0.6)}>{children}</Typography>;
     case TextUiType.text_12_400_primary_087:
-      return <TypographyMui {...onGetStyles(12, 400, theme.palette.text.primary, 0.87)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(12, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
     case TextUiType.text_12_400_primary_06:
-      return <TypographyMui {...onGetStyles(12, 400, theme.palette.text.primary, 0.6)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(12, 400, theme.palette.text.primary, 0.6)}>{children}</Typography>;
     case TextUiType.text_10_400_lightGray:
-      return <TypographyMui {...onGetStyles(10, 400, theme.palette.lightGray.main)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(10, 400, theme.palette.lightGray.main)}>{children}</Typography>;
     case TextUiType.text_10_400_white:
-      return <TypographyMui {...onGetStyles(10, 400, theme.palette.common.white)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(10, 400, theme.palette.common.white)}>{children}</Typography>;
     case TextUiType.text_10_400_black:
-      return <TypographyMui {...onGetStyles(10, 400, theme.palette.common.black)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(10, 400, theme.palette.common.black)}>{children}</Typography>;
     case TextUiType.text_6_400_lightGray:
-      return <TypographyMui {...onGetStyles(6, 400, theme.palette.lightGray.main)}>{children}</TypographyMui>;
+      return <Typography {...onGetStyles(6, 400, theme.palette.lightGray.main)}>{children}</Typography>;
     default:
       return (
-        <TypographyMui color={color} {...otherProps}>
+        <Typography color={color} {...otherProps}>
           {children}
-        </TypographyMui>
+        </Typography>
       );
   }
 };
