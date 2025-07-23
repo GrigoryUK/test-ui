@@ -1,8 +1,7 @@
 import React, { FC, SVGProps } from 'react';
 
+import { IconArrowAscDown, IconArrowAscUp, IconCopy, IconWifi } from './Icon.data.ts';
 import { IconUiType } from './Icon.types.ts';
-import IconCopy from '../assets/icon-copy.svg?react';
-import IconWifi from '../assets/icon-wifi.svg?react';
 import { UiTypeProps } from '../../types';
 
 export interface IconProps extends Required<UiTypeProps<typeof IconUiType>>, SVGProps<any> {}
@@ -15,6 +14,10 @@ export const Icon: FC<IconProps> = (props) => {
   };
 
   switch (uiType) {
+    case IconUiType.icon_arrow_asc_up:
+      return onCreateIcon(IconArrowAscUp);
+    case IconUiType.icon_arrow_asc_down:
+      return onCreateIcon(IconArrowAscDown);
     case IconUiType.icon_copy:
       return onCreateIcon(IconCopy);
     case IconUiType.icon_wifi:

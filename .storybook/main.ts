@@ -10,7 +10,12 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     config.plugins = config.plugins || [];
-    config.plugins.push(svgr({ svgrOptions: { icon: true }, include: '**/*.svg' }));
+    config.plugins.push(
+      svgr({
+        svgrOptions: { exportType: 'named', ref: true, svgo: false, titleProp: true },
+        include: '**/*.svg',
+      }),
+    );
 
     return config;
   },

@@ -25,7 +25,7 @@ export default [
       },
     ],
     plugins: [
-      svgr({ icon: true }),
+      svgr({ exportType: 'named', dimensions: false, svgo: false, typescript: true }),
       css({ output: 'main.css' }),
       resolve(),
       commonjs(),
