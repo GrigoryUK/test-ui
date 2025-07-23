@@ -1,12 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { alpha, Typography, TypographyProps, useTheme } from '@mui/material';
+import { Variant } from '@mui/material/styles/createTypography';
+import { TypographyPropsVariantOverrides } from '@mui/material/Typography/Typography';
+import { OverridableStringUnion } from '@mui/types';
 
 import { TextUiType } from './Text.types.ts';
 import { UiTypeProps } from '../../types';
 
 export interface TextProps extends TypographyProps, UiTypeProps<typeof TextUiType> {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const Text: FC<TextProps> = (props) => {
@@ -19,7 +22,7 @@ export const Text: FC<TextProps> = (props) => {
     fontWeight: number | string,
     customColor: string,
     alphaOpacity?: number,
-    variant?: any,
+    variant?: OverridableStringUnion<Variant | 'inherit', TypographyPropsVariantOverrides>,
     lineHeight?: number,
   ): TypographyProps => {
     return {
