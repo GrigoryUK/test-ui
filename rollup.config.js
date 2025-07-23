@@ -2,6 +2,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import svgr from '@svgr/rollup';
 import { readFileSync } from 'fs';
 import css from 'rollup-plugin-css-only';
 import { dts } from 'rollup-plugin-dts';
@@ -24,6 +25,7 @@ export default [
       },
     ],
     plugins: [
+      svgr({ icon: true }),
       css({ output: 'main.css' }),
       resolve(),
       commonjs(),
