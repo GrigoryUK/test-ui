@@ -1,0 +1,30 @@
+import React from 'react';
+
+import type { Meta, StoryFn } from '@storybook/react';
+import { $FILE$, $FILE$Props } from './$FILE$';
+import { $FILE$UiType } from './$FILE$.types';
+
+const meta: Meta<typeof $FILE$> = {
+    title: 'UI/$FILE$',
+    component: $FILE$,
+    tags: ['autodocs'],
+    args: {
+     uiType: $FILE$UiType.default,
+    },
+    argTypes: {
+     uiType: {
+     control: { type: 'select' },
+     options: Object.values($FILE$UiType),
+    },
+  },
+};
+
+export default meta;
+
+const Template: StoryFn<$FILE$Props> = (args: $FILE$Props) => <$FILE$ {...args} />;
+
+export const Default = Template.bind({});
+
+Default.args = {
+  uiType: $FILE$UiType.default,
+};

@@ -1,0 +1,20 @@
+import React, { FC } from 'react';
+
+import { $FILE$UiType } from './$FILE$.types';
+import { UiTypeProps } from '../../types';
+
+export interface $FILE$Props extends UiTypeProps<typeof $FILE$UiType> {}
+
+export const $FILE$: FC<$FILE$Props> = (props) => {
+  const { uiType } = props;
+
+  switch (uiType) {
+    case $FILE$UiType.default:
+    default:
+      return (
+        <div>
+          <div></div>
+        </div>
+      );
+  }
+};

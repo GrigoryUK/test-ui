@@ -188,10 +188,59 @@ export const onGetCommonComponents = (type?: keyof typeof themeType): Pick<Theme
 export const onGetCommonPalette = (type?: keyof typeof themeType): Pick<ThemeOptions, 'palette'> => {
   switch (type) {
     case themeType.advertiserDark:
+      return {
+        palette: {
+          mode: 'dark',
+          common: {
+            black: '#000000',
+            white: '#FFFFFF',
+          },
+          background: {
+            default: '#121212',
+            paper: '#1E1E1E',
+          },
+          text: {
+            primary: '#FFFFFF',
+            secondary: '#BDBDBD',
+          },
+          primary: {
+            main: '#2196F3',
+            light: '#42A5F5',
+          },
+          secondary: {
+            main: '#3D4756',
+            light: '#BDBDBD',
+          },
+          success: {
+            main: '#4CAF50',
+          },
+          error: {
+            main: '#FF5252',
+          },
+          customDivider: {
+            main: '#424242',
+          },
+          customWarning: {
+            main: '#FFA726',
+            contrastText: '#FFFFFF',
+            light: '#FFB74D',
+          },
+          purple: {
+            main: '#BA68C8',
+          },
+          deepBlue: {
+            main: '#0288D1',
+          },
+          lightGray: {
+            main: '#757575',
+          },
+        },
+      };
     case themeType.advertiser:
     default:
       return {
         palette: {
+          mode: 'light',
           common: {
             black: '#0B0B0B',
           },

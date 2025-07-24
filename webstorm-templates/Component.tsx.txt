@@ -1,0 +1,15 @@
+import React, { FC } from 'react';
+
+export interface $FILE$Props {
+  className?: string;
+}
+
+export const $FILE$: FC<$FILE$Props> = (props) => {
+  const { className } = props;
+
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
+};
