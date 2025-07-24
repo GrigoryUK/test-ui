@@ -20,4 +20,4 @@ export const TextUiType = {
   text_10_400_black: 'text_10_400_black',
   text_10_400_white: 'text_10_400_white',
   text_6_400_lightGray: 'text_6_400_lightGray',
-};
+} as const;

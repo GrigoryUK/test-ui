@@ -4,6 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Loader, LoaderProps } from './Loader';
 import { LoaderUiType } from './Loader.types';
+import { AllVariants } from '../../template-stories';
 
 const meta: Meta<typeof Loader> = {
   title: 'UI/Loader',
@@ -49,8 +50,21 @@ Default.args = {
   uiType: LoaderUiType.default,
 };
 
-export const Circle = Template.bind({});
+export const All = () => {
+  return (
+    <AllVariants<typeof LoaderUiType>
+      column={2}
+      uiTypes={LoaderUiType}
+      boxPropsTooltip={{
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+      Component={(uiType) => <Template uiType={uiType} height={50} />}
+    />
+  );
+};
 
-Circle.args = {
-  uiType: LoaderUiType.circle,
+All.parameters = {
+  controls: { disable: true },
+  docs: { source: { state: 'closed' } },
 };

@@ -5,6 +5,8 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { Button } from './Button';
 import { ButtonProps } from './Button';
 import { ButtonUiType } from './Button.types';
+import { Tooltip } from '../Tooltip';
+import { AllVariants } from '../../template-stories';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -42,20 +44,52 @@ Default.args = {
   variant: 'contained',
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  uiType: ButtonUiType.primary,
-  variant: 'contained',
+export const All = () => {
+  const options = [
+    {
+      type: ButtonUiType.default,
+      variants: 'contained',
+    },
+    {
+      type: ButtonUiType.primary,
+      variants: 'contained',
+    },
+    {
+      type: ButtonUiType.shadow,
+      variants: 'contained',
+    },
+    {
+      type: ButtonUiType.view_all,
+      variants: 'text',
+    },
+  ];
+
+  return (
+    <AllVariants
+      maxWidth={300}
+      customContent={
+        <>
+          {options.map((item) => {
+            return (
+              <Tooltip
+                key={`${item.variants}__${item.type}`}
+                itemWithTooltipProps={{
+                  content: `${item.type}`,
+                }}
+              >
+                <Button uiType={item.type} variant={item.variants as any}>
+                  Button
+                </Button>
+              </Tooltip>
+            );
+          })}
+        </>
+      }
+    ></AllVariants>
+  );
 };
 
-export const Shadow = Template.bind({});
-Shadow.args = {
-  uiType: ButtonUiType.shadow,
-  variant: 'contained',
-};
-
-export const ViewAll = Template.bind({});
-ViewAll.args = {
-  uiType: ButtonUiType.viewAll,
-  variant: 'text',
+All.parameters = {
+  controls: { disable: true },
+  docs: { source: { state: 'closed' } },
 };

@@ -4,6 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Icon, IconProps } from './Icon';
 import { IconUiType } from './Icon.types';
+import { AllVariants } from '../../template-stories';
 
 const meta: Meta<typeof Icon> = {
   title: 'ICONS/Icon',
@@ -33,8 +34,21 @@ Icon_wifi.args = {
   uiType: IconUiType.icon_wifi,
 };
 
-export const Icon_copy = Template.bind({});
+export const All = () => {
+  return (
+    <AllVariants<typeof IconUiType>
+      column={16}
+      uiTypes={IconUiType}
+      boxPropsTooltip={{
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+      Component={(uiType) => <Template uiType={uiType} width={24} height={24} />}
+    />
+  );
+};
 
-Icon_copy.args = {
-  uiType: IconUiType.icon_copy,
+All.parameters = {
+  controls: { disable: true },
+  docs: { source: { state: 'closed' } },
 };

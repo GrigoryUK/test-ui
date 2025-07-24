@@ -9,34 +9,19 @@ import { UiTypeProps } from '../../types';
 
 export interface ButtonProps extends ButtonPropsMui, UiTypeProps<typeof ButtonUiType> {}
 
-export const Button: FC<ButtonProps> = (props) => {
-  const { children, uiType, className, ...otherProps } = props;
+const config: Record<keyof typeof ButtonUiType, ButtonProps> = {
+  [ButtonUiType.default]: {},
+  [ButtonUiType.primary]: {},
+  [ButtonUiType.shadow]: {},
+  [ButtonUiType.view_all]: {},
+};
 
-  switch (uiType) {
-    case ButtonUiType.viewAll:
-      return (
-        <StyledButton className={clsx(uiType, className)} {...otherProps}>
-          {children}
-        </StyledButton>
-      );
-    case ButtonUiType.shadow:
-      return (
-        <StyledButton className={clsx(uiType, className)} {...otherProps}>
-          {children}
-        </StyledButton>
-      );
-    case ButtonUiType.primary:
-      return (
-        <StyledButton className={clsx(uiType, className)} {...otherProps}>
-          {children}
-        </StyledButton>
-      );
-    case ButtonUiType.default:
-    default:
-      return (
-        <StyledButton className={clsx(ButtonUiType.default, className)} {...otherProps}>
-          {children}
-        </StyledButton>
-      );
-  }
+export const Button: FC<ButtonProps> = (props) => {
+  const { children, uiType = ButtonUiType.default, className, ...otherProps } = props;
+
+  return (
+    <StyledButton className={clsx(uiType, className)} {...config[uiType]} {...otherProps}>
+      {children}
+    </StyledButton>
+  );
 };

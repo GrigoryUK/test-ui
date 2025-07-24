@@ -2,5 +2,5 @@ export const ButtonUiType = {
   default: 'default',
   primary: 'primary',
   shadow: 'shadow',
-  viewAll:  'viewAll',
+  view_all: 'view_all',
 } as const;

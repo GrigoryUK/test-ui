@@ -47,7 +47,7 @@ const Template = (args: ButtonDateProps) => {
   return <ButtonDate {...args} value={value} onChange={setValue} />;
 };
 
-export const Example: Story = {
+export const Default: Story = {
   args: {
     value: null,
   },

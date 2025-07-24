@@ -35,54 +35,37 @@ export const Text: FC<TextProps> = (props) => {
     };
   };
 
-  switch (uiType) {
-    case TextUiType.title_27_400_primary_037:
-      return <Typography {...onGetStyles(27, 400, theme.palette.text.primary, 0.37, 'h5')}>{children}</Typography>;
-    case TextUiType.title_24_600_primary:
-      return <Typography {...onGetStyles(24, 400, theme.palette.text.primary)}>{children}</Typography>;
-    case TextUiType.title_20_600_primary:
-      return <Typography {...onGetStyles(20, 600, theme.palette.text.primary)}>{children}</Typography>;
-    case TextUiType.title_20_600_primary_087:
-      return <Typography {...onGetStyles(20, 600, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.subtitle_16_700_primary_087:
-      return <Typography {...onGetStyles(16, 700, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.subtitle_16_600_primary:
-      return <Typography {...onGetStyles(16, 600, theme.palette.text.primary)}>{children}</Typography>;
-    case TextUiType.subtitle_16_600_primary_087:
-      return <Typography {...onGetStyles(16, 600, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.subtitle_16_500_primary_087:
-      return <Typography {...onGetStyles(16, 500, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.subtitle_16_400_primary:
-      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary)}>{children}</Typography>;
-    case TextUiType.subtitle_16_400_primary_087:
-      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.subtitle_16_400_grey_500:
-      return <Typography {...onGetStyles(16, 400, theme.palette.grey['500'])}>{children}</Typography>;
-    case TextUiType.subtitle_16_400_primary_037:
-      return <Typography {...onGetStyles(16, 400, theme.palette.text.primary, 0.37)}>{children}</Typography>;
-    case TextUiType.text_14_400_primary_087:
-      return <Typography {...onGetStyles(14, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.text_14_500_primary_06:
-      return <Typography {...onGetStyles(14, 500, theme.palette.text.primary, 0.6)}>{children}</Typography>;
-    case TextUiType.text_14_400_primary_06:
-      return <Typography {...onGetStyles(14, 400, theme.palette.text.primary, 0.6)}>{children}</Typography>;
-    case TextUiType.text_12_400_primary_087:
-      return <Typography {...onGetStyles(12, 400, theme.palette.text.primary, 0.87)}>{children}</Typography>;
-    case TextUiType.text_12_400_primary_06:
-      return <Typography {...onGetStyles(12, 400, theme.palette.text.primary, 0.6)}>{children}</Typography>;
-    case TextUiType.text_10_400_lightGray:
-      return <Typography {...onGetStyles(10, 400, theme.palette.lightGray.main)}>{children}</Typography>;
-    case TextUiType.text_10_400_white:
-      return <Typography {...onGetStyles(10, 400, theme.palette.common.white)}>{children}</Typography>;
-    case TextUiType.text_10_400_black:
-      return <Typography {...onGetStyles(10, 400, theme.palette.common.black)}>{children}</Typography>;
-    case TextUiType.text_6_400_lightGray:
-      return <Typography {...onGetStyles(6, 400, theme.palette.lightGray.main)}>{children}</Typography>;
-    default:
-      return (
-        <Typography color={color} {...otherProps}>
-          {children}
-        </Typography>
-      );
+  if (!uiType) {
+    return (
+      <Typography color={color} {...otherProps}>
+        {children}
+      </Typography>
+    );
   }
+
+  const config: Record<keyof typeof TextUiType, TypographyProps> = {
+    [TextUiType.title_27_400_primary_037]: onGetStyles(27, 400, theme.palette.text.primary, 0.37, 'h5'),
+    [TextUiType.title_24_600_primary]: onGetStyles(24, 600, theme.palette.text.primary),
+    [TextUiType.title_20_600_primary]: onGetStyles(20, 600, theme.palette.text.primary),
+    [TextUiType.title_20_600_primary_087]: onGetStyles(20, 600, theme.palette.text.primary, 0.87),
+    [TextUiType.subtitle_16_700_primary_087]: onGetStyles(16, 700, theme.palette.text.primary, 0.87),
+    [TextUiType.subtitle_16_600_primary]: onGetStyles(16, 600, theme.palette.text.primary),
+    [TextUiType.subtitle_16_600_primary_087]: onGetStyles(16, 600, theme.palette.text.primary, 0.87),
+    [TextUiType.subtitle_16_500_primary_087]: onGetStyles(16, 500, theme.palette.text.primary, 0.87),
+    [TextUiType.subtitle_16_400_primary]: onGetStyles(16, 400, theme.palette.text.primary),
+    [TextUiType.subtitle_16_400_primary_087]: onGetStyles(16, 400, theme.palette.text.primary, 0.87),
+    [TextUiType.subtitle_16_400_grey_500]: onGetStyles(16, 400, theme.palette.grey['500']),
+    [TextUiType.subtitle_16_400_primary_037]: onGetStyles(16, 400, theme.palette.text.primary, 0.37),
+    [TextUiType.text_14_400_primary_087]: onGetStyles(14, 400, theme.palette.text.primary, 0.87),
+    [TextUiType.text_14_500_primary_06]: onGetStyles(14, 500, theme.palette.text.primary, 0.6),
+    [TextUiType.text_14_400_primary_06]: onGetStyles(14, 400, theme.palette.text.primary, 0.6),
+    [TextUiType.text_12_400_primary_087]: onGetStyles(12, 400, theme.palette.text.primary, 0.87),
+    [TextUiType.text_12_400_primary_06]: onGetStyles(12, 400, theme.palette.text.primary, 0.6),
+    [TextUiType.text_10_400_lightGray]: onGetStyles(10, 400, theme.palette.lightGray.main),
+    [TextUiType.text_10_400_white]: onGetStyles(10, 400, theme.palette.common.white),
+    [TextUiType.text_10_400_black]: onGetStyles(10, 400, theme.palette.common.black),
+    [TextUiType.text_6_400_lightGray]: onGetStyles(6, 400, theme.palette.lightGray.main),
+  };
+
+  return <Typography {...config[uiType]}>{children}</Typography>;
 };

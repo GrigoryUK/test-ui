@@ -3,3 +3,4 @@ export * from './ButtonDate';
 export * from './Input';
 export * from './Loader';
 export * from './Text';
+export * from './Tooltip';

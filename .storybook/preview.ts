@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 
 import './styles/storybook.css';
-import '../src/styles/AdTargetComponents.css';
+import '../src/styles/main.css';
 
 import { onGetThemeDecorator } from './decorators/theme.decorator';
 

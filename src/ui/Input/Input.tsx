@@ -1,23 +1,22 @@
 import React, { FC } from 'react';
 
 import { TextFieldProps } from '@mui/material';
+import clsx from 'clsx';
 
 import { StyledInput } from './Input.styled.ts';
 import { InputUiType } from './Input.types.ts';
-import {UiTypeProps} from "../../types";
+import { UiTypeProps } from '../../types';
 
 export type InputProps = TextFieldProps & UiTypeProps<typeof InputUiType>;
 
-export const Input: FC<InputProps> = (props) => {
-  const { uiType, ...otherProps } = props;
+const config: Record<keyof typeof InputUiType, InputProps> = {
+  [InputUiType.default]: { size: 'medium' },
+  [InputUiType.secondary]: {},
+  [InputUiType.third]: {},
+};
 
-  switch (uiType) {
-    case InputUiType.third:
-      return <StyledInput className={uiType} {...otherProps} />;
-    case InputUiType.secondary:
-      return <StyledInput className={uiType} {...otherProps} />;
-    case InputUiType.default:
-    default:
-      return <StyledInput size={'medium'} className={uiType} {...otherProps} />;
-  }
+export const Input: FC<InputProps> = (props) => {
+  const { uiType = InputUiType.default, className, ...otherProps } = props;
+
+  return <StyledInput className={clsx(uiType, className)} {...config[uiType]} {...otherProps} />;
 };
