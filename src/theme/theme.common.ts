@@ -44,6 +44,142 @@ export const onGetCommonShadow = (type?: keyof typeof themeType): Pick<ThemeOpti
 export const onGetCommonComponents = (type?: keyof typeof themeType): Pick<ThemeOptions, 'components'> => {
   switch (type) {
     case themeType.advertiserDark:
+      return {
+        components: {
+          MuiFab: {
+            defaultProps: {
+              size: 'small',
+              variant: 'extended',
+              sx: {
+                width: 1,
+                borderRadius: 2,
+                textTransform: 'none',
+                padding: 1,
+                lineHeight: 1,
+                fontSize: 14,
+              },
+            },
+          },
+          MuiCollapse: {
+            defaultProps: {
+              unmountOnExit: true,
+            },
+          },
+          MuiSkeleton: {
+            styleOverrides: {
+              root: {
+                transform: 'none',
+              },
+            },
+          },
+          MuiSelect: {
+            defaultProps: {
+              MenuProps: {
+                disableScrollLock: true,
+              },
+            },
+          },
+          MuiMenu: {
+            defaultProps: {
+              disableScrollLock: true,
+            },
+            styleOverrides: {
+              list: {
+                padding: 0,
+              },
+            },
+          },
+          MuiPopper: {
+            defaultProps: {
+              modifiers: [
+                {
+                  name: 'offset',
+                  options: {
+                    offset: [0, 2],
+                  },
+                },
+              ],
+            },
+          },
+          MuiAutocomplete: {
+            defaultProps: {
+              size: 'medium',
+            },
+          },
+          MuiTextField: {
+            defaultProps: {
+              fullWidth: true,
+              size: 'medium',
+            },
+          },
+          MuiButton: {
+            defaultProps: {
+              disableElevation: true,
+            },
+            styleOverrides: {
+              root: {
+                textTransform: 'none',
+                fontWeight: '500',
+                borderRadius: '8px',
+              },
+            },
+          },
+          MuiFormControlLabel: {
+            styleOverrides: {
+              label: {
+                userSelect: 'none',
+              },
+            },
+          },
+          MuiTypography: {
+            defaultProps: {
+              variantMapping: {
+                h1: 'h1',
+                h2: 'h2',
+                h3: 'h2',
+                h4: 'h3',
+                h5: 'h3',
+                h6: 'h3',
+                body1: 'span',
+                body2: 'p',
+              },
+            },
+          },
+          MuiCssBaseline: {
+            styleOverrides: {
+              body: {
+                fontSize: 16,
+                background: '#333',
+              },
+            },
+          },
+          MuiInputBase: {
+            styleOverrides: {
+              root: {
+                '&.MuiInputBase-root': {
+                  borderRadius: '8px',
+                },
+              },
+            },
+          },
+          MuiFormHelperText: {
+            styleOverrides: {
+              root: {
+                fontSize: 12,
+              },
+            },
+          },
+          MuiPaper: {
+            styleOverrides: {
+              root: {
+                '&.MuiPaper-root': {
+                  borderRadius: '8px',
+                },
+              },
+            },
+          },
+        },
+      };
     case themeType.advertiser:
     default:
       return {
