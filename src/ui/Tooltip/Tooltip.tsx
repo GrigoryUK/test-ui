@@ -15,11 +15,7 @@ export const Tooltip: FC<TooltipProps> = (props) => {
   const BoxWithHoc = ItemWithTooltip(Box);
 
   return (
-    <BoxWithHoc
-      display={'flex'}
-      {...boxProps}
-      itemWithTooltipProps={{ hoverForced: itemWithTooltipProps?.hoverForced ?? true, ...itemWithTooltipProps }}
-    >
+    <BoxWithHoc display={'flex'} {...boxProps} itemWithTooltipProps={{ hoverForced: true, ...itemWithTooltipProps }}>
       {children}
     </BoxWithHoc>
   );
