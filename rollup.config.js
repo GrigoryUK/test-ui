@@ -26,7 +26,7 @@ export default [
     ],
     plugins: [
       svgr({ exportType: 'named', dimensions: false, svgo: false, typescript: true }),
-      css({ output: 'AdTargetComponents.css' }),
+      css({ output: 'main.css' }),
       resolve(),
       commonjs(),
       typescript({

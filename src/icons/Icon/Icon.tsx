@@ -59,8 +59,8 @@ const iconComponentsMap: Record<keyof typeof IconUiType, any> = {
   [IconUiType.icon_wifi]: Icons.IconWifi,
 };
 
-export const Icon: FC<IconProps> = ({ uiType, ...props }) => {
+export const Icon: FC<IconProps> = ({ uiType, ...otherProps }) => {
   const IconComponent = iconComponentsMap[uiType];
 
-  return <IconComponent {...props} />;
+  return <IconComponent {...otherProps} />;
 };
