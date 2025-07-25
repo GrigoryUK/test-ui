@@ -1,6 +1,6 @@
 import { alpha, Box, css, styled } from '@mui/material';
 
-export const StyledButtonDateBox = styled(Box)(
+export const StyledButtonFiltersBox = styled(Box)(
   ({ theme }) => css`
     display: flex;
     align-items: center;

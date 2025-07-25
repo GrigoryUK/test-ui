@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import clsx from 'clsx';
 
-import { StyledBox } from './ButtonDate.styled.ts';
+import { StyledButtonDateBox } from './ButtonDate.styled.ts';
 import { Icon } from '../../icons';
 
 export interface ButtonDateProps {
@@ -43,9 +43,9 @@ export const ButtonDate: FC<ButtonDateProps> = ({ onChange, value, disabled, tex
   };
 
   return (
-    <StyledBox className={clsx(disabled && 'disabled', ascStateUp !== null && 'active')} onClick={onToggle}>
+    <StyledButtonDateBox className={clsx(disabled && 'disabled', ascStateUp !== null && 'active')} onClick={onToggle}>
       <Box>{text}</Box>
       {ascStateUp === true ? <Icon uiType={'icon_arrow_asc_up'} /> : <Icon uiType={'icon_arrow_asc_down'} />}
-    </StyledBox>
+    </StyledButtonDateBox>
   );
 };
