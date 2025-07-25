@@ -3,28 +3,43 @@ import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 import { {{pascalCase name}}, {{pascalCase name}}Props } from './{{pascalCase name}}';
 import { {{pascalCase name}}UiType } from './{{pascalCase name}}.types';
+import { AllVariants } from '../../template-stories';
 
 const meta: Meta<typeof {{pascalCase name}}> = {
     title: 'UI/{{pascalCase name}}',
     component: {{pascalCase name}},
     tags: ['autodocs'],
     args: {
-     uiType: {{pascalCase name}}UiType.default,
+    uiType: {{pascalCase name}}UiType.default,
     },
     argTypes: {
-     uiType: {
-     control: { type: 'select' },
-     options: Object.values({{pascalCase name}}UiType),
+    uiType: {
+    control: { type: 'select' },
+    options: Object.values({{pascalCase name}}UiType),
     },
-  },
-};
+    },
+    };
 
-export default meta;
+    export default meta;
 
-const Template: StoryFn<{{pascalCase name}}Props> = (args: {{pascalCase name}}Props) => <{{pascalCase name}} {...args} />;
+    const Template: StoryFn<{{pascalCase name}}Props> = (args: {{pascalCase name}}Props) => <{{pascalCase name}} {...args} />;
 
-export const Default = Template.bind({});
+    export const Default = Template.bind({});
 
-Default.args = {
-  uiType: {{pascalCase name}}UiType.default,
-};
+    Default.args = {
+    uiType: {{pascalCase name}}UiType.default,
+    };
+
+    export const All = () => {
+    return (
+    <AllVariants<typeof {{pascalCase name}}UiType>
+        uiTypes={ {{pascalCase name}}UiType }
+        Component={(uiType) => <Template uiType={uiType} />}
+        />
+        );
+        };
+
+        All.parameters = {
+        controls: { disable: true },
+        docs: { source: { state: 'closed' } },
+        };

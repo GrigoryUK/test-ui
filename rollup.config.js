@@ -32,6 +32,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         exclude: [
+          'template-stories',
           '**/*.stories.tsx',
           '**/*.stories.ts',
           '**/*.stories.mdx',
