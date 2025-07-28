@@ -6,6 +6,8 @@ export * from './Collapse';
 export * from './Divider';
 export * from './Input';
 export * from './Loader';
+export * from './Search';
+export * from './Switch';
 export * from './Text';
 export * from './ToggleSwitcher';
 export * from './ToggleSwitcherOutlined';
