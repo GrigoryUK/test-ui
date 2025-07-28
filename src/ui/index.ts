@@ -7,6 +7,7 @@ export * from './ColumnBox';
 export * from './ConfirmDialog';
 export * from './CostInfo';
 export * from './Divider';
+export * from './Error';
 export * from './HelperText';
 export * from './Input';
 export * from './Loader';

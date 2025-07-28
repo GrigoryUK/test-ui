@@ -12,10 +12,11 @@ export interface HelperTextProps extends UiTypeProps<typeof HelperTextUiType> {
   show?: boolean;
   message?: string;
   withoutPadding?: boolean;
+  isError?: boolean;
 }
 
 export const HelperText: FC<HelperTextProps> = (props) => {
-  const { show = true, message, withoutPadding, uiType } = props;
+  const { show = true, message, withoutPadding, uiType, isError } = props;
 
   const FormHelperTextWithTooltip = ItemWithTooltip(StyledFormHelperText);
 
@@ -29,6 +30,7 @@ export const HelperText: FC<HelperTextProps> = (props) => {
           font: '12px Manrope',
           extraOffset: 28,
         }}
+        error={isError}
       >
         {message}
       </FormHelperTextWithTooltip>
