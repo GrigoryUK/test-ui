@@ -45,7 +45,15 @@ export default [
       }),
       terser(),
     ],
-    external: ['react', 'react-dom', '@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],
+    external: [
+      'autosuggest-highlight',
+      'react',
+      'react-dom',
+      '@mui/material',
+      '@mui/icons-material',
+      '@emotion/react',
+      '@emotion/styled',
+    ],
   },
   {
     external: [/\.css$/],

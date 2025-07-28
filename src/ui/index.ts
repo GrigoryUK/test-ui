@@ -9,6 +9,7 @@ export * from './CostInfo';
 export * from './Divider';
 export * from './Error';
 export * from './HelperText';
+export * from './Highlighter';
 export * from './Input';
 export * from './Loader';
 export * from './Menu';
