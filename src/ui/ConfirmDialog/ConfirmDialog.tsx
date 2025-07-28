@@ -10,7 +10,7 @@ import {
   IconButton,
 } from '@mui/material';
 
-import { StyledVerifiedDialog } from './ConfirmDialog.styled.ts';
+import { StyledConfirmDialog } from './ConfirmDialog.styled.ts';
 import { ConfirmDialogSize } from './ConfirmDialog.types.ts';
 import { Button } from '../Button';
 import { Text } from '../Text';
@@ -47,7 +47,7 @@ export const ConfirmDialog: FC<ConfirmDialogProps> = (props) => {
   } = props;
 
   return (
-    <StyledVerifiedDialog
+    <StyledConfirmDialog
       maxWidth="lg"
       {...otherProps}
       PaperProps={{
@@ -101,6 +101,6 @@ export const ConfirmDialog: FC<ConfirmDialogProps> = (props) => {
           </Button>
         </DialogActions>
       )}
-    </StyledVerifiedDialog>
+    </StyledConfirmDialog>
   );
 };

@@ -34,7 +34,10 @@ export const AllVariants = <T = any,>(props: AllVariantsProps<T>) => {
           itemWithTooltipProps={{
             content: `${item}`,
           }}
-          boxProps={boxPropsTooltip}
+          boxProps={{
+            width: 'fit-content',
+            ...boxPropsTooltip,
+          }}
         >
           {Component(item as keyof T)}
         </Tooltip>
