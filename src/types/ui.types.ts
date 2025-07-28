@@ -1,3 +1,5 @@
+import { Key, ReactNode } from 'react';
+
 export interface UiTypeProps<T extends object> {
   uiType?: keyof T;
 }
@@ -16,3 +18,14 @@ export const AnimationType = {
   noClosingAnimation: 'noClosingAnimation',
   noOpeningAnimation: 'noOpeningAnimation',
 } as const;
+
+export type OptionValue = string | number | null;
+
+export interface OptionItemProps<T = OptionValue> {
+  value: T;
+  text?: string;
+  id?: Key;
+  key?: Key;
+  disabled?: boolean;
+  content?: ReactNode;
+}
