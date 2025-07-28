@@ -12,7 +12,7 @@ export interface ButtonProps extends ButtonPropsMui, UiTypeProps<typeof ButtonUi
 const config: Record<keyof typeof ButtonUiType, ButtonProps> = {
   [ButtonUiType.default]: {},
   [ButtonUiType.primary]: {},
-  [ButtonUiType.shadow]: {},
+  [ButtonUiType.shadow]: { variant: 'contained' },
   [ButtonUiType.view_all]: {},
 };
 

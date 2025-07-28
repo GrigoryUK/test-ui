@@ -4,17 +4,14 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Text, TextProps } from './Text';
 import { TextUiType } from './Text.types';
-import { AllVariants } from '../../library-helpers';
-
-const LOREM_RU =
-  'В частности, начало повседневной работы по формированию позиции является качественно новой ступенью системы массового участия.';
+import { AllVariants, LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof Text> = {
   title: 'UI/Text',
   component: Text,
   tags: ['autodocs'],
   args: {
-    children: LOREM_RU,
+    children: LibraryUtils.getLoremRu(),
   },
   argTypes: {
     uiType: {
@@ -40,7 +37,7 @@ export const All = () => {
     <AllVariants<typeof TextUiType>
       column={1}
       uiTypes={TextUiType}
-      Component={(uiType) => <Template uiType={uiType}>{LOREM_RU}</Template>}
+      Component={(uiType) => <Template uiType={uiType}>{LibraryUtils.getLoremRu()}</Template>}
     />
   );
 };

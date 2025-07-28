@@ -23,9 +23,11 @@ export type OptionValue = string | number | null;
 
 export interface OptionItemProps<T = OptionValue> {
   value: T;
-  text?: string;
   id?: Key;
   key?: Key;
   disabled?: boolean;
+  text?: string;
   content?: ReactNode;
+  isError?: boolean;
+  isVisible?: boolean;
 }

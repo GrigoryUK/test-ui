@@ -3,6 +3,8 @@ export * from './ButtonDate';
 export * from './ButtonFilters';
 export * from './Characters';
 export * from './Collapse';
+export * from './ColumnBox';
+export * from './ConfirmDialog';
 export * from './Divider';
 export * from './Input';
 export * from './Loader';

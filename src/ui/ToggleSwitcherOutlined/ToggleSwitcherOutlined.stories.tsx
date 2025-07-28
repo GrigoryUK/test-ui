@@ -7,6 +7,11 @@ import {
   ToggleSwitcherOutlinedOptionProps,
   ToggleSwitcherOutlinedProps,
 } from './ToggleSwitcherOutlined';
+import { LibraryUtils } from '../../library-helpers';
+
+const arr = LibraryUtils.createArray();
+
+console.log(arr);
 
 const meta: Meta<typeof ToggleSwitcherOutlined> = {
   title: 'UI/ToggleSwitcherOutlined',
@@ -20,7 +25,7 @@ const meta: Meta<typeof ToggleSwitcherOutlined> = {
   },
 
   argTypes: {
-    value: { control: 'select', options: [0, 1, 2] },
+    value: { control: 'select', options: arr },
   },
 };
 
@@ -29,26 +34,15 @@ export default meta;
 type Story = StoryObj<typeof ToggleSwitcherOutlined>;
 
 const Template = (args: ToggleSwitcherOutlinedProps<any>) => {
-  const [value, setValue] = React.useState<number>(0);
+  const [value, setValue] = React.useState<number>(arr[0]);
 
-  const options: ToggleSwitcherOutlinedOptionProps<any>[] = [
-    {
-      value: 0,
-      content: 'Tab 1',
-      key: 0,
-    },
-    {
-      value: 1,
-      content: 'Tab 2',
-      key: 1,
-    },
-
-    {
-      value: 2,
-      content: 'Tab 3',
-      key: 2,
-    },
-  ];
+  const options: ToggleSwitcherOutlinedOptionProps<any>[] = arr.map((item) => {
+    return {
+      value: item,
+      content: `Tab ${item}`,
+      key: item,
+    };
+  });
 
   useEffect(() => {
     if (args.value === undefined) {

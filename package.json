@@ -15,8 +15,8 @@
     "cli": "node scripts/cli/cli.js",
     "generate": "node scripts/generate/generate.js",
     "delete:dist": "rm -rf dist",
-    "generate:component:ui:type": "plop component-ui-type",
-    "generate:component:ui": "plop component"
+    "generate:ui:component:type": "plop component-ui-type",
+    "generate:ui:component": "plop component"
   },
   "engines": {
     "node": "22.12.x"

@@ -115,6 +115,7 @@ export const onGetCommonComponents = (type?: keyof typeof themeType): Pick<Theme
           MuiButton: {
             defaultProps: {
               disableElevation: true,
+              variant: 'contained',
             },
             styleOverrides: {
               root: {

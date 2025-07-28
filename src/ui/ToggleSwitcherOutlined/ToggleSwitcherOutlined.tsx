@@ -4,16 +4,15 @@ import { Box } from '@mui/material';
 import clsx from 'clsx';
 
 import { StyledToggleSwitcherOutlinedBox } from './ToggleSwitcherOutlined.styled.ts';
+import { OptionItemProps, OptionValue } from '../../types';
 
-export interface ToggleSwitcherOutlinedOptionProps<T> {
-  key: string | number;
-  content: ReactNode;
+export interface ToggleSwitcherOutlinedOptionProps<T = OptionValue>
+  extends Pick<OptionItemProps, 'key' | 'content' | 'disabled'> {
   value: T;
-  disabled?: boolean;
   icon?: ReactNode;
 }
 
-export interface ToggleSwitcherOutlinedProps<T> {
+export interface ToggleSwitcherOutlinedProps<T = OptionValue> {
   options: ToggleSwitcherOutlinedOptionProps<T>[];
   value?: T;
   onChange?: (value: T) => void;
@@ -22,7 +21,7 @@ export interface ToggleSwitcherOutlinedProps<T> {
   isError?: boolean;
 }
 
-export const ToggleSwitcherOutlined = <T,>(props: ToggleSwitcherOutlinedProps<T>) => {
+export const ToggleSwitcherOutlined = <T = OptionValue,>(props: ToggleSwitcherOutlinedProps<T>) => {
   const { options, withIcons, disabled, isError, value, onChange } = props;
 
   const [valueState, setValueState] = useState<T>(null as T);

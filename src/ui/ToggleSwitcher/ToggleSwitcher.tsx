@@ -1,22 +1,18 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { alpha, Box, useTheme } from '@mui/material';
 import clsx from 'clsx';
 
 import { StyledToggleSwitcherFab } from './ToggleSwitcher.styled';
+import { OptionItemProps, OptionValue } from '../../types';
 
-export interface ToggleSwitcherOptionProps {
-  key: string | number;
-  content: ReactNode;
-  value: string | number;
-  disabled?: boolean;
-  isError?: boolean;
-}
+export interface ToggleSwitcherOptionProps
+  extends Pick<OptionItemProps, 'key' | 'value' | 'content' | 'disabled' | 'isError'> {}
 
 export interface ToggleSwitcherProps {
   options: ToggleSwitcherOptionProps[];
-  value?: string | number;
-  onChange?: (value: string | number) => void;
+  value?: OptionValue;
+  onChange?: (value: OptionValue) => void;
   disabled?: boolean;
   isError?: boolean;
 }
@@ -26,7 +22,7 @@ export const ToggleSwitcher: FC<ToggleSwitcherProps> = (props) => {
 
   const theme = useTheme();
 
-  const [valueState, setValueState] = useState<string | number>((options[0] as any).value);
+  const [valueState, setValueState] = useState<OptionValue>((options[0] as any).value);
 
   useEffect(() => {
     if (value !== undefined) {
@@ -34,7 +30,7 @@ export const ToggleSwitcher: FC<ToggleSwitcherProps> = (props) => {
     }
   }, [value]);
 
-  const onSelect = (value: string | number) => {
+  const onSelect = (value: OptionValue) => {
     setValueState(value);
 
     if (!onChange) {
