@@ -1,19 +1,15 @@
 import React, { FC } from 'react';
-import { UiTypeProps } from '../../types';
-import { {{pascalCase name}}UiType } from './{{pascalCase name}}.types';
 
-export interface {{pascalCase name}}Props extends UiTypeProps<typeof {{pascalCase name}}UiType> {}
+export interface {{pascalCase name}}Props {
+  className?: string;
+}
 
 export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = (props) => {
-  const { uiType } = props;
+  const { className } = props;
 
-  switch (uiType) {
-    case {{pascalCase name}}UiType.default:
-    default:
-    return (
-      <div>
-          <div></div>
-      </div>
-    );
-  }
+  return (
+   <div>
+    <div></div>
+    </div>
+  );
 };
