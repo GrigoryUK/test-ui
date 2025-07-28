@@ -66,7 +66,6 @@
   },
   "peerDependencies": {
     "autosuggest-highlight": "^3.3.4",
-    "@types/autosuggest-highlight": "^3.2.3",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.3",
