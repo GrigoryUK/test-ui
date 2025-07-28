@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Menu, MenuProps } from './Menu';
 import { Button } from '../Button';
+import { AnimationType } from '../../types';
 
 const meta: Meta<typeof Menu> = {
   title: 'UI/Menu',
@@ -12,8 +13,16 @@ const meta: Meta<typeof Menu> = {
   tags: ['autodocs'],
   args: {
     anchorEl: null,
+    timeoutAnimation: AnimationType.normal,
+    fullWidth: false,
+    placement: 'bottom',
   },
-  argTypes: {},
+  argTypes: {
+    timeoutAnimation: {
+      control: 'select',
+      options: Object.values(AnimationType),
+    },
+  },
 };
 
 export default meta;
@@ -29,10 +38,6 @@ const Template = (args: MenuProps) => {
     setValue(null);
   };
 
-  useEffect(() => {
-    setValue(args.anchorEl as any);
-  }, [args.anchorEl]);
-
   const onToggle = (event: React.MouseEvent<HTMLElement>) => {
     setValue(event.currentTarget);
   };
@@ -42,7 +47,18 @@ const Template = (args: MenuProps) => {
       <Button onClick={onToggle} uiType={'shadow'}>
         {isOpen ? 'show' : 'hidden'}
       </Button>
-      <Menu {...args} onHideMenu={onHideMenu} />
+      <Menu
+        {...args}
+        anchorEl={value}
+        onHideMenu={onHideMenu}
+        placement={'bottom'}
+        contentBefore={
+          <Box padding={1} maxWidth={300}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cum dicta dignissimos earum eius facere
+            hic libero minima nemo officiis pariatur quas quibusdam quo quos repellat, tempore, tenetur totam vel.
+          </Box>
+        }
+      />
     </Box>
   );
 };

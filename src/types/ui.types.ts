@@ -14,9 +14,9 @@ export type TimeoutProps =
 
 export const AnimationType = {
   normal: 'normal',
-  noAnimation: 'noAnimation',
-  noClosingAnimation: 'noClosingAnimation',
-  noOpeningAnimation: 'noOpeningAnimation',
+  no_closing_animation: 'no_closing_animation',
+  no_opening_animation: 'no_opening_animation',
+  none: 'none',
 } as const;
 
 export type OptionValue = string | number | null;

@@ -80,9 +80,9 @@ export const Menu: FC<MenuProps> = (props) => {
   }, [open]);
 
   const timeout: Record<keyof typeof AnimationType, any> = {
-    [AnimationType.noClosingAnimation]: open ? AUTO : MIN_TIMEOUT,
-    [AnimationType.noOpeningAnimation]: open ? MIN_TIMEOUT : AUTO,
-    [AnimationType.noAnimation]: MIN_TIMEOUT,
+    [AnimationType.no_closing_animation]: open ? AUTO : MIN_TIMEOUT,
+    [AnimationType.no_opening_animation]: open ? MIN_TIMEOUT : AUTO,
+    [AnimationType.none]: MIN_TIMEOUT,
     [AnimationType.normal]: AUTO,
   };
 

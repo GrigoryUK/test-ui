@@ -128,15 +128,15 @@ export const ItemWithTooltip = <P extends object>(WrappedComponent: ComponentTyp
       switch (itemWithTooltipProps?.timeoutAnimation) {
         case AnimationType.normal:
           return DEFAULT_TIMEOUT;
-        case AnimationType.noOpeningAnimation:
+        case AnimationType.no_opening_animation:
           return {
             appear: MIN_TIMEOUT,
             enter: MIN_TIMEOUT,
             exit: DEFAULT_TIMEOUT,
           };
-        case AnimationType.noAnimation:
+        case AnimationType.none:
           return MIN_TIMEOUT;
-        case AnimationType.noClosingAnimation:
+        case AnimationType.no_closing_animation:
         default:
           return {
             appear: DEFAULT_TIMEOUT,

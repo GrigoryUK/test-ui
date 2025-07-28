@@ -32,7 +32,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         exclude: [
-          'template-stories',
+          '**/template-stories/**',
           '**/*.stories.tsx',
           '**/*.stories.ts',
           '**/*.stories.mdx',
@@ -51,6 +51,6 @@ export default [
     external: [/\.css$/],
     input: 'src/index.ts',
     output: [{ file: packageJson.types, format: 'esm' }],
-    plugins: [dts({ respectExternal: false })],
+    plugins: [dts({ respectExternal: false, compilerOptions, tsconfig })],
   },
 ];
