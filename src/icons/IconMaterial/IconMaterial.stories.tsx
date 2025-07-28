@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { IconMaterial, IconMaterialProps } from './IconMaterial';
 import { IconMaterialUiType } from './IconMaterial.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof IconMaterial> = {
   title: 'ICONS/IconMaterial',

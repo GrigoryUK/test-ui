@@ -30,6 +30,7 @@
   },
   "include": ["src"],
   "exclude": [
+    "**/library-helpers/**",
     "scripts",
     "node_modules",
     "dist",

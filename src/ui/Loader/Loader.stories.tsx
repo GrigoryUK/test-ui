@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Loader, LoaderProps } from './Loader';
 import { LoaderUiType } from './Loader.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof Loader> = {
   title: 'UI/Loader',

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { Box, BoxProps } from '@mui/material';
 
-import { Tooltip } from '../../ui';
+import { Tooltip } from '../../../ui';
 
 export interface AllVariantsProps<T = any> {
   uiTypes?: T;

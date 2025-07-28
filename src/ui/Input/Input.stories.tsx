@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input, InputProps } from './Input';
 import { InputUiType } from './Input.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const LABEL = 'label';
 

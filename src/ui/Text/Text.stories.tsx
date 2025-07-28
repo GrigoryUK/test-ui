@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Text, TextProps } from './Text';
 import { TextUiType } from './Text.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const LOREM_RU =
   'В частности, начало повседневной работы по формированию позиции является качественно новой ступенью системы массового участия.';

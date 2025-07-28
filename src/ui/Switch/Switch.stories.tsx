@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Switch, SwitchProps } from './Switch';
 import { SwitchUiType } from './Switch.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof Switch> = {
   title: 'UI/Switch',

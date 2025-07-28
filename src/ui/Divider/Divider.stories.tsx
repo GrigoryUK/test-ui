@@ -5,7 +5,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Divider, DividerProps } from './Divider';
 import { DividerUiType } from './Divider.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof Divider> = {
   title: 'UI/Divider',

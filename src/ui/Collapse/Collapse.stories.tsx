@@ -7,7 +7,7 @@ import { Collapse, CollapseProps } from './Collapse';
 import { CollapseUiType } from './Collapse.types';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof Collapse> = {
   title: 'UI/Collapse',

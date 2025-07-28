@@ -1,10 +1,7 @@
-export type DebouncedFunc<T extends (...args: any[]) => any> = T & {
-  cancel: () => void;
-  flush: () => ReturnType<T>;
-};
+import { DebouncedFunc } from '../types';
 
 export class ToolboxUtils {
-  static debounce<T extends (...args: any[]) => any>(
+  public static debounce<T extends (...args: any[]) => any>(
     func: T,
     wait: number = 0,
     options: {

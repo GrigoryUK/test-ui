@@ -4,7 +4,7 @@ import { Box, TooltipProps as TooltipPropsMui } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tooltip, TooltipProps } from './Tooltip';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const CONTENT = 'content';
 

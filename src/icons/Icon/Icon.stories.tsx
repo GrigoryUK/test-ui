@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { Icon, IconProps } from './Icon';
 import { IconUiType } from './Icon.types';
-import { AllVariants } from '../../template-stories';
+import { AllVariants } from '../../library-helpers';
 
 const meta: Meta<typeof Icon> = {
   title: 'ICONS/Icon',
