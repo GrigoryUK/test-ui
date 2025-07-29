@@ -8,6 +8,8 @@ import { ButtonUiType } from './Button.types';
 import { Tooltip } from '../Tooltip';
 import { AllVariants } from '../../library-helpers';
 
+const TEXT = 'Кнопка';
+
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
   component: Button,
@@ -17,7 +19,7 @@ const meta: Meta<typeof Button> = {
     variant: 'contained',
     fullWidth: false,
     disabled: false,
-    children: 'Button',
+    children: TEXT,
   },
   argTypes: {
     uiType: {
@@ -78,7 +80,7 @@ export const All = () => {
                 }}
               >
                 <Button uiType={item.type} variant={item.variants as any}>
-                  Button
+                  {TEXT}
                 </Button>
               </Tooltip>
             );

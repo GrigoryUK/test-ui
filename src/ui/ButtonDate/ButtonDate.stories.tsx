@@ -4,12 +4,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonDate, ButtonDateProps } from './ButtonDate';
 
+const TEXT = 'Сортировать по дате';
+
 const meta: Meta<typeof ButtonDate> = {
   title: 'UI/ButtonDate',
   component: ButtonDate,
   tags: ['autodocs'],
   args: {
-    text: 'Sort by date',
+    text: TEXT,
     disabled: false,
     value: false,
   },

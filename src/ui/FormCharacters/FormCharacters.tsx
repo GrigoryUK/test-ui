@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Box, BoxProps, FormHelperText } from '@mui/material';
 
-export interface CharactersProps {
+export interface FormCharactersProps {
   maxLength?: number;
   isError?: boolean;
   currentLength?: number;
@@ -10,7 +10,7 @@ export interface CharactersProps {
   text?: string;
 }
 
-export const Characters: FC<CharactersProps> = (props) => {
+export const FormCharacters: FC<FormCharactersProps> = (props) => {
   const { boxProps, maxLength, currentLength, isError, text } = props;
 
   if (!maxLength) {

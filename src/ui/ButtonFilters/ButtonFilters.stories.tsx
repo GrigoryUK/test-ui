@@ -4,12 +4,14 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import { ButtonFilters, ButtonFiltersProps } from './ButtonFilters';
 
+const TEXT = 'Фильтры';
+
 const meta: Meta<typeof ButtonFilters> = {
   title: 'UI/ButtonFilters',
   component: ButtonFilters,
   tags: ['autodocs'],
   args: {
-    text: 'Filters',
+    text: TEXT,
   },
   argTypes: {
     text: { control: 'text' },

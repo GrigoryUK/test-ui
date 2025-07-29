@@ -11,8 +11,6 @@ import { LibraryUtils } from '../../library-helpers';
 
 const arr = LibraryUtils.createArray();
 
-console.log(arr);
-
 const meta: Meta<typeof ToggleSwitcherOutlined> = {
   title: 'UI/ToggleSwitcherOutlined',
   component: ToggleSwitcherOutlined,
@@ -34,7 +32,7 @@ export default meta;
 type Story = StoryObj<typeof ToggleSwitcherOutlined>;
 
 const Template = (args: ToggleSwitcherOutlinedProps<any>) => {
-  const [value, setValue] = React.useState<number>(arr[0]);
+  const [value, setValue] = React.useState<number>(arr[0] as any);
 
   const options: ToggleSwitcherOutlinedOptionProps<any>[] = arr.map((item) => {
     return {

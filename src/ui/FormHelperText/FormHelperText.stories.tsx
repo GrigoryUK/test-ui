@@ -3,16 +3,16 @@ import React from 'react';
 import { Box } from '@mui/material';
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { HelperText, HelperTextProps } from './HelperText';
-import { HelperTextUiType } from './HelperText.types';
+import { FormHelperText, FormHelperTextProps } from './FormHelperText';
+import { FormHelperTextUiType } from './FormHelperText.types';
 import { AllVariants, LibraryUtils } from '../../library-helpers';
 
-const meta: Meta<typeof HelperText> = {
+const meta: Meta<typeof FormHelperText> = {
   title: 'UI/HelperText',
-  component: HelperText,
+  component: FormHelperText,
   tags: ['autodocs'],
   args: {
-    uiType: HelperTextUiType.default,
+    uiType: FormHelperTextUiType.default,
     show: true,
     message: LibraryUtils.getLoremRu(10),
     withoutPadding: false,
@@ -20,14 +20,14 @@ const meta: Meta<typeof HelperText> = {
   argTypes: {
     uiType: {
       control: 'select',
-      options: Object.values(HelperTextUiType),
+      options: Object.values(FormHelperTextUiType),
     },
   },
 };
 
 export default meta;
 
-const Template: StoryFn<HelperTextProps> = (args: HelperTextProps) => <HelperText {...args} />;
+const Template: StoryFn<FormHelperTextProps> = (args: FormHelperTextProps) => <FormHelperText {...args} />;
 
 export const Default = Template.bind({});
 
@@ -35,9 +35,9 @@ Default.args = {};
 
 export const All = () => {
   return (
-    <AllVariants<typeof HelperTextUiType>
+    <AllVariants<typeof FormHelperTextUiType>
       column={1}
-      uiTypes={HelperTextUiType}
+      uiTypes={FormHelperTextUiType}
       boxPropsTooltip={{}}
       Component={(uiType) => (
         <Box maxWidth={200}>

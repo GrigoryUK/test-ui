@@ -7,7 +7,7 @@ import { Collapse, CollapseProps } from './Collapse';
 import { CollapseUiType } from './Collapse.types';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { AllVariants } from '../../library-helpers';
+import { AllVariants, LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof Collapse> = {
   title: 'UI/Collapse',
@@ -55,10 +55,7 @@ const Template = (args: CollapseProps) => {
       </Box>
 
       <Collapse {...args} in={value}>
-        <Text uiType={'subtitle_16_700_primary_087'}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolor dolore, doloremque error quae quia!
-          Aliquid architecto aut delectus doloremque eligendi et nobis nostrum quo ratione sapiente vero, vitae!
-        </Text>
+        <Text uiType={'subtitle_16_700_primary_087'}>{LibraryUtils.getLoremRu(50)}</Text>
       </Collapse>
     </Box>
   );

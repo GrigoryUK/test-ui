@@ -3,16 +3,16 @@ import React from 'react';
 import { Box } from '@mui/material';
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { Error, ErrorProps } from './Error';
-import { HelperTextUiType } from '../HelperText/HelperText.types';
+import { FormError, FormErrorProps } from './FormError';
+import { FormHelperTextUiType } from '../FormHelperText/FormHelperText.types';
 import { AllVariants, LibraryUtils } from '../../library-helpers';
 
-const meta: Meta<typeof Error> = {
+const meta: Meta<typeof FormError> = {
   title: 'UI/Error',
-  component: Error,
+  component: FormError,
   tags: ['autodocs'],
   args: {
-    uiType: HelperTextUiType.default,
+    uiType: FormHelperTextUiType.default,
     show: true,
     message: LibraryUtils.getLoremRu(10),
     withoutPadding: false,
@@ -20,14 +20,14 @@ const meta: Meta<typeof Error> = {
   argTypes: {
     uiType: {
       control: 'select',
-      options: Object.values(HelperTextUiType),
+      options: Object.values(FormHelperTextUiType),
     },
   },
 };
 
 export default meta;
 
-const Template: StoryFn<ErrorProps> = (args: ErrorProps) => <Error {...args} />;
+const Template: StoryFn<FormErrorProps> = (args: FormErrorProps) => <FormError {...args} />;
 
 export const Default = Template.bind({});
 
@@ -35,8 +35,8 @@ Default.args = {};
 
 export const All = () => {
   return (
-    <AllVariants<typeof HelperTextUiType>
-      uiTypes={HelperTextUiType}
+    <AllVariants<typeof FormHelperTextUiType>
+      uiTypes={FormHelperTextUiType}
       column={1}
       Component={(uiType) => (
         <Box maxWidth={200}>

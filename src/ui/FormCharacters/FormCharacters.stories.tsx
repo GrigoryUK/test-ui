@@ -2,14 +2,16 @@ import React from 'react';
 
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { Characters, CharactersProps } from './Characters';
+import { FormCharacters, FormCharactersProps } from './FormCharacters';
 
-const meta: Meta<typeof Characters> = {
+const TEXT = 'символов';
+
+const meta: Meta<typeof FormCharacters> = {
   title: 'UI/Characters',
-  component: Characters,
+  component: FormCharacters,
   tags: ['autodocs'],
   args: {
-    text: 'characters',
+    text: TEXT,
     isError: false,
     maxLength: 2000,
     currentLength: 1000,
@@ -21,6 +23,6 @@ const meta: Meta<typeof Characters> = {
 
 export default meta;
 
-const Template: StoryFn<CharactersProps> = (args: CharactersProps) => <Characters {...args} />;
+const Template: StoryFn<FormCharactersProps> = (args: FormCharactersProps) => <FormCharacters {...args} />;
 
 export const Default = Template.bind({});

@@ -2,20 +2,20 @@ import React, { FC } from 'react';
 
 import clsx from 'clsx';
 
-import { StyledFormHelperText } from './HelperText.styled';
-import { HelperTextUiType } from './HelperText.types.ts';
+import { StyledFormHelperText } from './FormHelperText.styled.ts';
+import { FormHelperTextUiType } from './FormHelperText.types.ts';
 import { Collapse } from '../Collapse';
 import { ItemWithTooltip } from '../../hoc';
 import { UiTypeProps } from '../../types';
 
-export interface HelperTextProps extends UiTypeProps<typeof HelperTextUiType> {
+export interface FormHelperTextProps extends UiTypeProps<typeof FormHelperTextUiType> {
   show?: boolean;
   message?: string;
   withoutPadding?: boolean;
   isError?: boolean;
 }
 
-export const HelperText: FC<HelperTextProps> = (props) => {
+export const FormHelperText: FC<FormHelperTextProps> = (props) => {
   const { show = true, message, withoutPadding, uiType, isError } = props;
 
   const FormHelperTextWithTooltip = ItemWithTooltip(StyledFormHelperText);
@@ -25,7 +25,7 @@ export const HelperText: FC<HelperTextProps> = (props) => {
       <FormHelperTextWithTooltip
         className={clsx(uiType, withoutPadding && 'withoutPadding')}
         itemWithTooltipProps={{
-          disabled: uiType === HelperTextUiType.default,
+          disabled: uiType === FormHelperTextUiType.default,
           content: message,
           font: '12px Manrope',
           extraOffset: 28,

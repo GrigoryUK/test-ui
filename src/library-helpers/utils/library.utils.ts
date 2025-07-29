@@ -34,6 +34,31 @@ export class LibraryUtils {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  public static getRandomLink() {
+    const domains = ['example.com', 'google.com', 'github.com', 'youtube.com', 'test.org'];
+
+    const paths = ['', 'page', 'article', 'post', 'random', 'path', 'item'];
+
+    const protocols = ['http', 'https'];
+
+    const randomProtocol = protocols[Math.floor(Math.random() * protocols.length)];
+
+    const randomDomain = domains[Math.floor(Math.random() * domains.length)];
+
+    const randomPath = paths[Math.floor(Math.random() * paths.length)];
+
+    const randomQuery = Math.random() > 0.5 ? `?id=${Math.floor(Math.random() * 1000)}` : '';
+
+    let url = `${randomProtocol}://${randomDomain}`;
+
+    if (randomPath) {
+      url += `/${randomPath}`;
+    }
+    url += randomQuery;
+
+    return url;
+  }
+
   public static createArray(lengthMassive: number = 3) {
     return Array.from({ length: lengthMassive }, (_, index) => index);
   }
