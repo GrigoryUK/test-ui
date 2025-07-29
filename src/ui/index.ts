@@ -13,6 +13,7 @@ export * from './Highlighter';
 export * from './InfoNotice';
 export * from './InfoPlate';
 export * from './Input';
+export * from './LabelInfo';
 export * from './Loader';
 export * from './Menu';
 export * from './PaperBox';

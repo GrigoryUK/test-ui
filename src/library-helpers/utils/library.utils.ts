@@ -13,6 +13,27 @@ export class LibraryUtils {
     return lorem.substring(0, lengthSymbol);
   }
 
+  public static getCurrency(type: 'rub' | 'usd' = 'rub') {
+    const typeToMap: Record<string, string> = {
+      rub: '₽',
+      usd: '$',
+    };
+
+    return typeToMap[type];
+  }
+
+  public static getRandomNumber(numberLength: number = 3) {
+    if (numberLength <= 0) {
+      return 0;
+    }
+
+    const min = Math.pow(10, numberLength - 1);
+
+    const max = Math.pow(10, numberLength) - 1;
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   public static createArray(lengthMassive: number = 3) {
     return Array.from({ length: lengthMassive }, (_, index) => index);
   }

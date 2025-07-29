@@ -13,13 +13,13 @@ const meta: Meta<typeof InfoPlate> = {
     maxWidth: 215,
     items: [
       {
-        value: 100,
-        currency: '₽',
+        value: LibraryUtils.getRandomNumber(),
+        currency: LibraryUtils.getCurrency(),
         description: LibraryUtils.getLoremRu(20),
       },
       {
-        value: 1000,
-        currency: '₽',
+        value: LibraryUtils.getRandomNumber(),
+        currency: LibraryUtils.getCurrency(),
         description: LibraryUtils.getLoremRu(10),
         withTooltip: true,
         tooltipProps: {
@@ -27,8 +27,8 @@ const meta: Meta<typeof InfoPlate> = {
         },
       },
       {
-        value: 200,
-        currency: '₽',
+        value: LibraryUtils.getRandomNumber(),
+        currency: LibraryUtils.getCurrency(),
         description: LibraryUtils.getLoremRu(10),
         withTooltip: true,
         tooltipProps: {
@@ -36,8 +36,8 @@ const meta: Meta<typeof InfoPlate> = {
         },
       },
       {
-        value: 200,
-        currency: '₽',
+        value: LibraryUtils.getRandomNumber(),
+        currency: LibraryUtils.getCurrency(),
         description: LibraryUtils.getLoremRu(10),
         withTooltip: true,
         tooltipProps: {
