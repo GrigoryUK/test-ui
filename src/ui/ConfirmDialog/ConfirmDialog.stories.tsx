@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ConfirmDialog, ConfirmDialogProps } from './ConfirmDialog';
 import { ConfirmDialogSize } from './ConfirmDialog.types';
 import { Button } from '../Button';
-import { LibraryUtils } from '../../library-helpers';
+import { LibraryUtils, t } from '../../library-helpers';
 
 const meta: Meta<typeof ConfirmDialog> = {
   title: 'UI/ConfirmDialog',
@@ -14,8 +14,8 @@ const meta: Meta<typeof ConfirmDialog> = {
   tags: ['autodocs'],
   args: {
     open: false,
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
+    confirmText: t['Confirm'],
+    cancelText: t['Cancel'],
     size: 'small',
     title: LibraryUtils.getLoremRu(20),
     content: <Box>{LibraryUtils.getLoremRu()}</Box>,
@@ -52,7 +52,7 @@ const Template = (args: ConfirmDialogProps) => {
   return (
     <>
       <Button onClick={onToggle} uiType={'shadow'}>
-        {value ? 'Закрыть' : 'Открыть'}
+        {value ? t['Close'] : t['Open']}
       </Button>
       <ConfirmDialog
         {...args}

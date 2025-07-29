@@ -6,9 +6,9 @@ import { Button } from './Button';
 import { ButtonProps } from './Button';
 import { ButtonUiType } from './Button.types';
 import { Tooltip } from '../Tooltip';
-import { AllVariants } from '../../library-helpers';
+import { AllVariants, t } from '../../library-helpers';
 
-const TEXT = 'Кнопка';
+const TEXT = t['Button'];
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',

@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 
 import {
-  DialogActions,
   DialogContent,
   DialogContentProps,
   DialogProps,
@@ -12,16 +11,12 @@ import {
 
 import { StyledConfirmDialog } from './ConfirmDialog.styled.ts';
 import { ConfirmDialogSize } from './ConfirmDialog.types.ts';
-import { Button } from '../Button';
+import { ActionModalButtons, ActionModalButtonsProps } from '../ActionModalButtons';
 import { Text } from '../Text';
 import { IconMaterial } from '../../icons';
 
-export interface ConfirmDialogProps extends Omit<DialogProps, 'content' | 'size'> {
+export interface ConfirmDialogProps extends Omit<DialogProps, 'content' | 'size'>, ActionModalButtonsProps {
   content: ReactNode;
-  onCancel: () => void;
-  onConfirm: () => void;
-  cancelText?: string;
-  confirmText?: string;
   title?: string;
   withoutCloseButton?: boolean;
   size?: keyof typeof ConfirmDialogSize;
@@ -92,14 +87,12 @@ export const ConfirmDialog: FC<ConfirmDialogProps> = (props) => {
         </DialogContent>
       )}
       {!withoutButtonActions && (
-        <DialogActions sx={{ gap: 1.5 }}>
-          <Button uiType={'primary'} onClick={onCancel}>
-            {cancelText}
-          </Button>
-          <Button uiType={'shadow'} onClick={onConfirm} variant={'contained'}>
-            {confirmText}
-          </Button>
-        </DialogActions>
+        <ActionModalButtons
+          onConfirm={onConfirm}
+          confirmText={confirmText}
+          cancelText={cancelText}
+          onCancel={onConfirm}
+        />
       )}
     </StyledConfirmDialog>
   );

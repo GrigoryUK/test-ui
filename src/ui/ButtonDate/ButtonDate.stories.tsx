@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonDate, ButtonDateProps } from './ButtonDate';
+import { t } from '../../library-helpers';
 
-const TEXT = 'Сортировать по дате';
+const TEXT = t['Sort by date'];
 
 const meta: Meta<typeof ButtonDate> = {
   title: 'UI/ButtonDate',
