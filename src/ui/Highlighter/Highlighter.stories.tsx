@@ -10,8 +10,8 @@ const meta: Meta<typeof Highlighter> = {
   component: Highlighter,
   tags: ['autodocs'],
   args: {
-    text: LibraryUtils.getLoremEn(50),
-    query: LibraryUtils.getLoremEn(10),
+    text: LibraryUtils.getLoremRu(50),
+    query: LibraryUtils.getLoremRu(10),
   },
   argTypes: {},
 };

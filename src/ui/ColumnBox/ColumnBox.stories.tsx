@@ -23,8 +23,8 @@ export const Default = Template.bind({});
 Default.args = {
   children: (
     <>
-      <Box>{LibraryUtils.getLoremEn()}</Box>
-      <Box>{LibraryUtils.getLoremEn()}</Box>
+      <Box>{LibraryUtils.getLoremRu()}</Box>
+      <Box>{LibraryUtils.getLoremRu()}</Box>
     </>
   ),
 };

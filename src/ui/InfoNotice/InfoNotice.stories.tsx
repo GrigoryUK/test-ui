@@ -11,7 +11,7 @@ const meta: Meta<typeof InfoNotice> = {
   component: InfoNotice,
   tags: ['autodocs'],
   args: {
-    text: LibraryUtils.getLoremEn(),
+    text: LibraryUtils.getLoremRu(),
     icon: <Icon uiType={'icon_alert'} width={22} height={22} />,
   },
   argTypes: {},

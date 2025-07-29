@@ -14,7 +14,7 @@ const meta: Meta<typeof HelperText> = {
   args: {
     uiType: HelperTextUiType.default,
     show: true,
-    message: LibraryUtils.getLoremEn(10),
+    message: LibraryUtils.getLoremRu(10),
     withoutPadding: false,
   },
   argTypes: {
@@ -41,7 +41,7 @@ export const All = () => {
       boxPropsTooltip={{}}
       Component={(uiType) => (
         <Box maxWidth={200}>
-          <Template uiType={uiType} message={LibraryUtils.getLoremEn(50)} />
+          <Template uiType={uiType} message={LibraryUtils.getLoremRu(50)} />
         </Box>
       )}
     />

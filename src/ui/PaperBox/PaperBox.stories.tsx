@@ -12,7 +12,7 @@ const meta: Meta<typeof PaperBox> = {
   tags: ['autodocs'],
   args: {
     maxWidth: 300,
-    children: <Box>{LibraryUtils.getLoremEn()}</Box>,
+    children: <Box>{LibraryUtils.getLoremRu()}</Box>,
   },
   argTypes: {},
 };

@@ -14,7 +14,7 @@ const meta: Meta<typeof Error> = {
   args: {
     uiType: HelperTextUiType.default,
     show: true,
-    message: LibraryUtils.getLoremEn(10),
+    message: LibraryUtils.getLoremRu(10),
     withoutPadding: false,
   },
   argTypes: {
@@ -40,7 +40,7 @@ export const All = () => {
       column={1}
       Component={(uiType) => (
         <Box maxWidth={200}>
-          <Template show uiType={uiType} message={LibraryUtils.getLoremEn(50)} />
+          <Template show uiType={uiType} message={LibraryUtils.getLoremRu(50)} />
         </Box>
       )}
     />

@@ -4,10 +4,10 @@ import { Paper, PaperProps, SxProps, Theme } from '@mui/material';
 
 export interface PaperBoxProps {
   children: ReactNode;
-  paperProps?: PaperProps;
   maxWidth?: number | string;
   padding?: number | string;
   sx?: SxProps<Theme> | undefined;
+  paperProps?: PaperProps;
 }
 
 export const PaperBox: FC<PaperBoxProps> = (props) => {

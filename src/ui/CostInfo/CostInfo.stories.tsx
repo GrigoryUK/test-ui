@@ -11,7 +11,7 @@ const meta: Meta<typeof CostInfo> = {
   tags: ['autodocs'],
   args: {
     disabled: false,
-    tooltipContent: LibraryUtils.getLoremEn(10),
+    tooltipContent: LibraryUtils.getLoremRu(10),
   },
   argTypes: {},
 };
