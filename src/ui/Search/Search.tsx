@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useCallback, useEffect, useState } from 'react';
+import React, { ChangeEvent, FC, KeyboardEvent, useCallback, useEffect, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -53,7 +53,7 @@ export const Search: FC<SearchProps> = (props) => {
     onChange(valueState);
   };
 
-  const onKeyPress = (e: React.KeyboardEvent) => {
+  const onKeyPress = (e: KeyboardEvent) => {
     if (disabled) {
       return;
     }

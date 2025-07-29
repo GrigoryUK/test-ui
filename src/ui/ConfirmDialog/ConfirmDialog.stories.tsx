@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -25,7 +25,7 @@ const meta: Meta<typeof ConfirmDialog> = {
   argTypes: {
     size: {
       control: 'select',
-      options: Object.values(ConfirmDialogSize),
+      options: Object.keys(ConfirmDialogSize),
     },
   },
 };
@@ -35,7 +35,7 @@ export default meta;
 type Story = StoryObj<typeof ConfirmDialog>;
 
 const Template = (args: ConfirmDialogProps) => {
-  const [value, setValue] = React.useState<boolean>(false);
+  const [value, setValue] = useState<boolean>(false);
 
   useEffect(() => {
     if (args.open === undefined) {
@@ -52,7 +52,7 @@ const Template = (args: ConfirmDialogProps) => {
   return (
     <>
       <Button onClick={onToggle} uiType={'shadow'}>
-        {value ? 'Close' : 'Open'}
+        {value ? 'Закрыть' : 'Открыть'}
       </Button>
       <ConfirmDialog
         {...args}

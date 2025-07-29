@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -36,7 +36,7 @@ export default meta;
 type Story = StoryObj<typeof ButtonDate>;
 
 const Template = (args: ButtonDateProps) => {
-  const [value, setValue] = React.useState<boolean | null>(null);
+  const [value, setValue] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (args.value === undefined) {

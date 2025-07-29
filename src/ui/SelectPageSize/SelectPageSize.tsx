@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { FC, MouseEvent, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Box } from '@mui/material';
 import clsx from 'clsx';
@@ -36,7 +36,7 @@ export const SelectPageSize: FC<SelectPageSizeProps> = (props) => {
     setValueState(value);
   }, [value]);
 
-  const onToggle = (event: React.MouseEvent<HTMLElement>) => {
+  const onToggle = (event: MouseEvent<HTMLElement>) => {
     if (disabled) {
       return;
     }

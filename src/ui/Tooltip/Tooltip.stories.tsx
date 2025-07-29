@@ -4,11 +4,11 @@ import { Box, TooltipProps as TooltipPropsMui } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tooltip, TooltipProps } from './Tooltip';
-import { AllVariants } from '../../library-helpers';
+import { AllVariants, LibraryUtils } from '../../library-helpers';
 
-const CONTENT = 'content';
+const CONTENT = LibraryUtils.getLoremRu(10);
 
-const TOOLTIP = 'tooltip';
+const TOOLTIP = 'Подсказка';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'UI/Tooltip',
@@ -16,7 +16,7 @@ const meta: Meta<typeof Tooltip> = {
   tags: ['autodocs'],
   args: {
     itemWithTooltipProps: {
-      content: 'Content',
+      content: CONTENT,
       placement: 'auto',
     },
   },

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -30,7 +30,7 @@ export default meta;
 type Story = StoryObj<typeof Collapse>;
 
 const Template = (args: CollapseProps) => {
-  const [value, setValue] = React.useState<boolean>(true);
+  const [value, setValue] = useState<boolean>(true);
 
   useEffect(() => {
     if (args.in === undefined) {

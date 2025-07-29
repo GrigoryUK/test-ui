@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox, CheckboxProps } from './Checkbox';
 import { CheckboxUiType } from './Checkbox.types';
-import { AllVariants } from '../../library-helpers';
+import { AllVariants, LibraryUtils } from '../../library-helpers';
+
+const LABEL = LibraryUtils.getLoremRu(10);
 
 const meta: Meta<typeof Checkbox> = {
   title: 'UI/Checkbox',
@@ -12,7 +14,7 @@ const meta: Meta<typeof Checkbox> = {
   tags: ['autodocs'],
   args: {
     uiType: CheckboxUiType.default,
-    label: 'Checkbox',
+    label: LABEL,
     checked: false,
     height: 3,
   },
@@ -29,7 +31,7 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 const Template = (args: CheckboxProps) => {
-  const [value, setValue] = React.useState<boolean>(false);
+  const [value, setValue] = useState<boolean>(false);
 
   useEffect(() => {
     if (args.checked === undefined) {

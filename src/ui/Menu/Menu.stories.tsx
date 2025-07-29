@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent, useState } from 'react';
 
 import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -30,7 +30,7 @@ export default meta;
 type Story = StoryObj<typeof Menu>;
 
 const Template = (args: MenuProps) => {
-  const [value, setValue] = React.useState<HTMLElement | null>(null);
+  const [value, setValue] = useState<HTMLElement | null>(null);
 
   const isOpen = Boolean(value);
 
@@ -38,7 +38,7 @@ const Template = (args: MenuProps) => {
     setValue(null);
   };
 
-  const onToggle = (event: React.MouseEvent<HTMLElement>) => {
+  const onToggle = (event: MouseEvent<HTMLElement>) => {
     setValue(event.currentTarget);
   };
 

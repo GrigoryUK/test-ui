@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -32,12 +32,12 @@ export default meta;
 type Story = StoryObj<typeof ToggleSwitcherOutlined>;
 
 const Template = (args: ToggleSwitcherOutlinedProps<any>) => {
-  const [value, setValue] = React.useState<number>(arr[0] as any);
+  const [value, setValue] = useState<number>(arr[0] as any);
 
   const options: ToggleSwitcherOutlinedOptionProps<any>[] = arr.map((item) => {
     return {
       value: item,
-      content: `Tab ${item}`,
+      content: `Панель ${item}`,
       key: item,
     };
   });

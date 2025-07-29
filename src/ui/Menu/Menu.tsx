@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, KeyboardEvent, ReactNode, useEffect } from 'react';
 
 import {
   Box,
@@ -56,7 +56,7 @@ export const Menu: FC<MenuProps> = (props) => {
 
   const open = Boolean(anchorEl);
 
-  const onListKeyDown = (event: React.KeyboardEvent) => {
+  const onListKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Tab') {
       event.preventDefault();
       onHideMenu();

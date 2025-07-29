@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -26,12 +26,12 @@ export default meta;
 type Story = StoryObj<typeof ToggleSwitcher>;
 
 const Template = (args: ToggleSwitcherProps) => {
-  const [value, setValue] = React.useState<number>(arr[0]);
+  const [value, setValue] = useState<number>(arr[0] as any);
 
   const options: ToggleSwitcherOptionProps[] = arr.map((item) => {
     return {
       value: item,
-      content: `Tab ${item}`,
+      content: `Панель ${item}`,
       key: item,
     };
   });

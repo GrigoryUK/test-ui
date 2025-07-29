@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Box } from '@mui/material';
 
@@ -10,7 +10,7 @@ import { UiTypeProps } from '../../types';
 
 export interface LabelInfoProps extends UiTypeProps<typeof LabelInfoUiType> {
   content: string | number;
-  tooltipContent: React.ReactNode;
+  tooltipContent: ReactNode;
   currency?: string;
 }
 

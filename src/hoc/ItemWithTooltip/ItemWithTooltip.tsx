@@ -1,4 +1,14 @@
-import React, { ComponentType, FC, MutableRefObject, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  ComponentType,
+  FC,
+  isValidElement,
+  MutableRefObject,
+  ReactNode,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { Box, Fade, Tooltip as TooltipMui, TooltipProps as TooltipPropsMui } from '@mui/material';
 import { Property } from 'csstype';
@@ -186,7 +196,7 @@ export const ItemWithTooltip = <P extends object>(WrappedComponent: ComponentTyp
         ) : (
           <WrappedComponent ref={wrappedComponentRef} {...(props as P)}>
             {(props as any)?.children}
-            {React.isValidElement(itemWithTooltipProps?.isClosingElement) && (
+            {isValidElement(itemWithTooltipProps?.isClosingElement) && (
               <Box
                 sx={{
                   opacity: 0,

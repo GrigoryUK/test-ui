@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input, InputProps } from './Input';
 import { InputUiType } from './Input.types';
-import { AllVariants } from '../../library-helpers';
+import { AllVariants, LibraryUtils } from '../../library-helpers';
 
-const LABEL = 'label';
+const LABEL = LibraryUtils.getLoremRu(5);
 
-const TEXT = 'text';
+const TEXT = LibraryUtils.getLoremRu(10);
 
-const PLACEHOLDER = 'placeholder';
+const PLACEHOLDER = LibraryUtils.getLoremRu(10);
 
 const meta: Meta<typeof Input> = {
   title: 'UI/Input',
@@ -18,11 +18,11 @@ const meta: Meta<typeof Input> = {
   tags: ['autodocs'],
   args: {
     uiType: InputUiType.default,
-    value: 'Text',
+    value: TEXT,
     disabled: false,
     variant: 'outlined',
-    placeholder: 'placeholder',
-    label: 'label',
+    placeholder: PLACEHOLDER,
+    label: LABEL,
   },
   argTypes: {
     uiType: {
@@ -41,7 +41,7 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 const Template = (args: InputProps) => {
-  const [value, setValue] = React.useState<''>('');
+  const [value, setValue] = useState<''>('');
 
   useEffect(() => {
     if (args.value === undefined) {

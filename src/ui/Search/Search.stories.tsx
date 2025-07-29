@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -21,7 +21,7 @@ export default meta;
 type Story = StoryObj<typeof Search>;
 
 const Template = (args: SearchProps) => {
-  const [value, setValue] = React.useState<''>('');
+  const [value, setValue] = useState<''>('');
 
   useEffect(() => {
     if (args.value === undefined) {
