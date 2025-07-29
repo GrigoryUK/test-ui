@@ -29,7 +29,7 @@ export const Text: FC<TextProps> = (props) => {
       fontSize: fontSize,
       fontWeight: fontWeight,
       lineHeight: lineHeight ?? 1.3,
-      color: (color ?? !alphaOpacity) ? customColor : `${alpha(customColor, alphaOpacity)}`,
+      color: color ? color : alphaOpacity ? `${alpha(customColor, alphaOpacity)}` : customColor,
       variant: variant ?? 'body2',
       ...otherProps,
     };
