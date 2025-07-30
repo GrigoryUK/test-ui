@@ -13,10 +13,10 @@
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss}\" --write",
     "cli": "node scripts/cli/cli.js",
-    "generate": "node scripts/generate/generate.js",
     "delete:dist": "rm -rf dist",
-    "generate:ui:component:type": "plop component-ui-type",
-    "generate:ui:component": "plop component"
+    "gen": "node scripts/generate/generate.js",
+    "gen:ui:component:type": "plop component-ui-type",
+    "gen:ui:component": "plop component"
   },
   "engines": {
     "node": "22.12.x"
@@ -62,9 +62,11 @@
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.8.1",
     "vite-plugin-svgr": "^4.3.0",
-    "@mui/icons-material": "^6.1.3"
+    "@mui/icons-material": "^6.1.3",
+    "react-verification-input": "^4.2.2"
   },
   "peerDependencies": {
+    "react-verification-input": "^4.2.2",
     "autosuggest-highlight": "^3.3.4",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

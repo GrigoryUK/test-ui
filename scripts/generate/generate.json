@@ -3,11 +3,11 @@
   "initOptions": [
     {
       "message": "Создания шаблона ui компонента (styled, index, component, stories) (generate:ui:component)",
-      "value": "npm run generate:ui:component"
+      "value": "npm run gen:ui:component"
     },
     {
       "message": "Создания шаблона ui компонента (styled, types, index, component, stories) (generate:ui:component:type)",
-      "value": "npm run generate:ui:component:type"
+      "value": "npm run gen:ui:component:type"
     }
   ]
 }

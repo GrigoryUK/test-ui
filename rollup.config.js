@@ -53,6 +53,7 @@ export default [
       '@mui/icons-material',
       '@emotion/react',
       '@emotion/styled',
+      'react-verification-input',
     ],
   },
   {
