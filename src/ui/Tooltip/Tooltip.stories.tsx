@@ -4,11 +4,11 @@ import { Box, TooltipProps as TooltipPropsMui } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tooltip, TooltipProps } from './Tooltip';
-import { AllVariants, LibraryUtils } from '../../library-helpers';
+import { AllVariants, LibraryUtils, t } from '../../library-helpers';
 
 const CONTENT = LibraryUtils.getLoremRu(10);
 
-const TOOLTIP = 'Подсказка';
+const TOOLTIP = t['Tooltip'];
 
 const meta: Meta<typeof Tooltip> = {
   title: 'UI/Tooltip',

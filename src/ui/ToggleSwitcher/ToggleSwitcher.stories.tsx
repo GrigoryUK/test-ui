@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ToggleSwitcher, ToggleSwitcherOptionProps, ToggleSwitcherProps } from './ToggleSwitcher';
-import { LibraryUtils } from '../../library-helpers';
+import { LibraryUtils, t } from '../../library-helpers';
 
 const arr = LibraryUtils.createArray();
 
@@ -31,7 +31,7 @@ const Template = (args: ToggleSwitcherProps) => {
   const options: ToggleSwitcherOptionProps[] = arr.map((item) => {
     return {
       value: item,
-      content: `Панель ${item}`,
+      content: `${t['Tab']} ${item}`,
       key: item,
     };
   });

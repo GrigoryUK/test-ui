@@ -13,7 +13,7 @@ export const StyledButton = styled(Button)(
       font-size: 14px;
     }
 
-    &.viewAll {
+    &.view_all {
       padding: 1px 5px;
       font-size: 13px;
       line-height: 1.7;

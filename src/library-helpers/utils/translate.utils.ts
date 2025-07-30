@@ -6,4 +6,10 @@ export const t = {
   Close: 'Закрыть',
   'Sort by date': 'Сортировать по дате',
   Filters: 'Фильтры',
+  Tab: 'Панель',
+  Step: 'Шаг',
+  Tooltip: 'Подсказка',
+  Option: 'Опция',
+  Search: 'Поиск',
+  'No data': 'Нет данных',
 };

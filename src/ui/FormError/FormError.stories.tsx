@@ -8,7 +8,7 @@ import { FormHelperTextUiType } from '../FormHelperText/FormHelperText.types';
 import { AllVariants, LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof FormError> = {
-  title: 'UI/Error',
+  title: 'UI/FormError',
   component: FormError,
   tags: ['autodocs'],
   args: {

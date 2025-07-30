@@ -7,7 +7,7 @@ import {
   ToggleSwitcherOutlinedOptionProps,
   ToggleSwitcherOutlinedProps,
 } from './ToggleSwitcherOutlined';
-import { LibraryUtils } from '../../library-helpers';
+import { LibraryUtils, t } from '../../library-helpers';
 
 const arr = LibraryUtils.createArray();
 
@@ -37,7 +37,7 @@ const Template = (args: ToggleSwitcherOutlinedProps<any>) => {
   const options: ToggleSwitcherOutlinedOptionProps<any>[] = arr.map((item) => {
     return {
       value: item,
-      content: `Панель ${item}`,
+      content: `${t['Tab']} ${item}`,
       key: item,
     };
   });

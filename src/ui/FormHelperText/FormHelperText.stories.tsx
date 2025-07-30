@@ -8,7 +8,7 @@ import { FormHelperTextUiType } from './FormHelperText.types';
 import { AllVariants, LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof FormHelperText> = {
-  title: 'UI/HelperText',
+  title: 'UI/FormHelperText',
   component: FormHelperText,
   tags: ['autodocs'],
   args: {

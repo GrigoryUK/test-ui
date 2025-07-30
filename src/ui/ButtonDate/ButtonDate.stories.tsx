@@ -47,6 +47,14 @@ const Template = (args: ButtonDateProps) => {
     setValue(args.value);
   }, [args.value]);
 
+  useEffect(() => {
+    if (args.value === undefined) {
+      return;
+    }
+
+    setValue(args.value);
+  }, [args.value]);
+
   return <ButtonDate {...args} value={value} onChange={setValue} />;
 };
 

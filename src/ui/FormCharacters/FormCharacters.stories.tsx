@@ -7,7 +7,7 @@ import { FormCharacters, FormCharactersProps } from './FormCharacters';
 const TEXT = 'символов';
 
 const meta: Meta<typeof FormCharacters> = {
-  title: 'UI/Characters',
+  title: 'UI/FormCharacters',
   component: FormCharacters,
   tags: ['autodocs'],
   args: {

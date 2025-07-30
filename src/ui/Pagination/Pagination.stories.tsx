@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -24,7 +24,7 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 
 const Template = (args: PaginationProps) => {
-  const [value, setValue] = React.useState<number>(5);
+  const [value, setValue] = useState<number>(5);
 
   useEffect(() => {
     if (args.count === undefined) {

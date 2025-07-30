@@ -1,5 +1,9 @@
 import { Key, ReactNode } from 'react';
 
+import { PopperPlacementType } from '@mui/material';
+
+import { InputProps } from '../ui';
+
 export interface UiTypeProps<T extends object> {
   uiType?: keyof T;
 }
@@ -30,4 +34,16 @@ export interface OptionItemProps<T = OptionValue> {
   content?: ReactNode;
   isError?: boolean;
   isVisible?: boolean;
+}
+
+export interface AutoCompleteBaseProps {
+  label?: string;
+  withHighlightText?: boolean;
+  placementList?: PopperPlacementType;
+  maxWidth?: number | string;
+  disableClearable?: boolean;
+  disabled?: boolean;
+  onClear?: () => void;
+  inputProps?: InputProps;
+  noOptionsText?: string;
 }

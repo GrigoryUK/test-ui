@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Search, SearchProps } from './Search';
+import { t } from '../../library-helpers';
 
 const meta: Meta<typeof Search> = {
   title: 'UI/Search',
@@ -11,7 +12,7 @@ const meta: Meta<typeof Search> = {
   args: {
     value: '',
     disabled: false,
-    placeholder: 'Search...',
+    placeholder: `${t['Search']}...`,
   },
   argTypes: {},
 };
