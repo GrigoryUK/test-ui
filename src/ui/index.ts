@@ -1,6 +1,6 @@
 export * from './ActionModalButtons';
-export * from './AutocompleteOption';
 export * from './AutocompleteMulti';
+export * from './AutocompleteOption';
 export * from './Button';
 export * from './ButtonDate';
 export * from './ButtonFilters';
@@ -32,3 +32,4 @@ export * from './Text';
 export * from './ToggleSwitcher';
 export * from './ToggleSwitcherOutlined';
 export * from './Tooltip';
+export * from './VerificationCode';
