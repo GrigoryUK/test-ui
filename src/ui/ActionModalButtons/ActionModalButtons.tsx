@@ -15,38 +15,34 @@ export interface ActionModalButtonsProps extends UiTypeProps<typeof ActionModalB
 export const ActionModalButtons: FC<ActionModalButtonsProps> = (props) => {
   const { uiType = ActionModalButtonsUiType.default, cancelText, confirmText, onConfirm, onCancel } = props;
 
-  const ComponentToMap = {
-    [ActionModalButtonsUiType.default]: (
-      <StyledActionModalButtonsDialogActions className={uiType}>
-        <Button
-          sx={{
-            zIndex: (theme) => theme.zIndex.tooltip + 1,
-          }}
-          uiType={'primary'}
-          onClick={() => {
-            if (!onCancel) {
-              return;
-            }
-            onCancel();
-          }}
-        >
-          {cancelText}
-        </Button>
-        <Button
-          uiType={'shadow'}
-          onClick={() => {
-            if (!onConfirm) {
-              return;
-            }
-            onConfirm();
-          }}
-          variant={'contained'}
-        >
-          {confirmText}
-        </Button>
-      </StyledActionModalButtonsDialogActions>
-    ),
-  };
-
-  return ComponentToMap[uiType];
+  return (
+    <StyledActionModalButtonsDialogActions className={uiType}>
+      <Button
+        sx={{
+          zIndex: (theme) => theme.zIndex.tooltip + 1,
+        }}
+        uiType={'primary'}
+        onClick={() => {
+          if (!onCancel) {
+            return;
+          }
+          onCancel();
+        }}
+      >
+        {cancelText}
+      </Button>
+      <Button
+        uiType={'shadow'}
+        onClick={() => {
+          if (!onConfirm) {
+            return;
+          }
+          onConfirm();
+        }}
+        variant={'contained'}
+      >
+        {confirmText}
+      </Button>
+    </StyledActionModalButtonsDialogActions>
+  );
 };

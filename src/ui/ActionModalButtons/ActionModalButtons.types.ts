@@ -1,3 +1,4 @@
 export const ActionModalButtonsUiType = {
-    default: 'default',
+  default: 'default',
+  confirm: 'confirm',
 } as const;

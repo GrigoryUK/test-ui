@@ -3,47 +3,49 @@ import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ConfirmDialog, ConfirmDialogProps } from './ConfirmDialog';
-import { ConfirmDialogSize } from './ConfirmDialog.types';
+import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
 import { Button } from '../Button';
+import { ModalSize } from '../Modal/Modal.types';
 import { LibraryUtils, t } from '../../library-helpers';
 
-const meta: Meta<typeof ConfirmDialog> = {
-  title: 'UI/ConfirmDialog',
-  component: ConfirmDialog,
+const meta: Meta<typeof ModalConfirm> = {
+  title: 'UI/ModalConfirm',
+  component: ModalConfirm,
   tags: ['autodocs'],
   args: {
-    open: false,
-    confirmText: t['Confirm'],
-    cancelText: t['Cancel'],
+    isOpen: false,
+    actionModalButtonsProps: {
+      confirmText: t['Confirm'],
+      cancelText: t['Cancel'],
+    },
     size: 'small',
     title: LibraryUtils.getLoremRu(20),
     content: <Box>{LibraryUtils.getLoremRu()}</Box>,
     withoutButtonActions: false,
-    withoutCloseButton: false,
+    withoutButtonClose: false,
   },
   argTypes: {
     size: {
       control: 'select',
-      options: Object.keys(ConfirmDialogSize),
+      options: Object.keys(ModalSize),
     },
   },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ConfirmDialog>;
+type Story = StoryObj<typeof ModalConfirm>;
 
-const Template = (args: ConfirmDialogProps) => {
+const Template = (args: ModalConfirmProps) => {
   const [value, setValue] = useState<boolean>(false);
 
   useEffect(() => {
-    if (args.open === undefined) {
+    if (args.isOpen === undefined) {
       return;
     }
 
-    setValue(args.open);
-  }, [args.open]);
+    setValue(args.isOpen);
+  }, [args.isOpen]);
 
   const onToggle = () => {
     setValue((prevState) => !prevState);
@@ -54,15 +56,18 @@ const Template = (args: ConfirmDialogProps) => {
       <Button onClick={onToggle} uiType={'shadow'}>
         {value ? t['Close'] : t['Open']}
       </Button>
-      <ConfirmDialog
+      <ModalConfirm
         {...args}
-        onCancel={() => {
-          setValue(false);
+        isOpen={value}
+        actionModalButtonsProps={{
+          ...args?.actionModalButtonsProps,
+          onCancel: () => {
+            setValue(false);
+          },
+          onConfirm: () => {
+            setValue(false);
+          },
         }}
-        onConfirm={() => {
-          setValue(false);
-        }}
-        open={value}
       />
     </>
   );

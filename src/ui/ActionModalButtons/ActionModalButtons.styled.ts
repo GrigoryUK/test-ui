@@ -6,5 +6,9 @@ export const StyledActionModalButtonsDialogActions = styled(DialogActions)(
       padding: 8px 24px 16px;
       gap: 12px;
     }
+
+    &.confirm {
+      padding: 0 24px 16px;
+    }
   `,
 );

@@ -3,12 +3,13 @@ import React, { FC, MutableRefObject, ReactNode, useEffect } from 'react';
 import { DialogContent, DialogContentProps, DialogProps, DialogTitle, DialogTitleProps, useTheme } from '@mui/material';
 
 import { StyledModalBox, StyledModalDialog, StyledModalIconButton } from './Modal.styled.ts';
-import { ModalSize } from './Modal.types.ts';
+import { ModalSize, ModalUiType } from './Modal.types.ts';
 import { Loader } from '../Loader';
 import { Text } from '../Text';
 import { IconMaterial } from '../../icons';
+import { UiTypeProps } from '../../types';
 
-export interface ModalProps {
+export interface ModalProps extends UiTypeProps<typeof ModalUiType> {
   onClose?: (event?: object) => void;
   isOpen?: boolean;
   isLoading?: boolean;
@@ -38,7 +39,7 @@ export const Modal: FC<ModalProps> = (props) => {
     dialogProps,
     onClose,
     isOpen = false,
-    size = 'medium',
+    size,
     fullWidth,
     ref,
     id,
@@ -49,7 +50,10 @@ export const Modal: FC<ModalProps> = (props) => {
     title,
     contentBefore,
     isLoading,
+    uiType,
   } = props;
+
+  const typeIsConfirm = uiType === ModalUiType.confirm;
 
   const theme = useTheme();
 
@@ -58,7 +62,7 @@ export const Modal: FC<ModalProps> = (props) => {
       return;
     }
 
-    if (reason === 'backdropClick') {
+    if (!typeIsConfirm && reason === 'backdropClick') {
       return;
     }
 
@@ -87,7 +91,7 @@ export const Modal: FC<ModalProps> = (props) => {
   const transitionDuration = {
     appear: DEFAULT_TIMEOUT,
     enter: DEFAULT_TIMEOUT,
-    exit: MIN_TIMEOUT,
+    exit: typeIsConfirm ? DEFAULT_TIMEOUT : MIN_TIMEOUT,
   };
 
   return (
@@ -103,7 +107,7 @@ export const Modal: FC<ModalProps> = (props) => {
       fullWidth={fullWidth ?? true}
       PaperProps={{
         sx: {
-          width: ModalSize[size],
+          width: size ? ModalSize[size] : typeIsConfirm ? ModalSize['small'] : ModalSize['medium'],
         },
       }}
     >
@@ -140,7 +144,7 @@ export const Modal: FC<ModalProps> = (props) => {
       {content && (
         <DialogContent
           sx={{
-            pt: title ? '8px !important' : '16px !important',
+            pt: typeIsConfirm ? (title ? 0 : 5) : title ? '8px !important' : '16px !important',
             pb: title ? 1 : 2,
           }}
           {...dialogContentProps}
