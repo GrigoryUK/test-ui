@@ -1,1 +1,1 @@
-export * from './ControlInput.tsx';
+export * from './ControlInput';
