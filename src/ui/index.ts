@@ -8,6 +8,7 @@ export * from './Checkbox';
 export * from './Collapse';
 export * from './ColumnBox';
 export * from './CostInfo';
+export * from './DatePicker';
 export * from './Divider';
 export * from './FormCharacters';
 export * from './FormError';

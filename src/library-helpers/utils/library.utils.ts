@@ -62,4 +62,12 @@ export class LibraryUtils {
   public static createArray(lengthMassive: number = 3) {
     return Array.from({ length: lengthMassive }, (_, index) => index);
   }
+
+  public static getToday() {
+    const date = new Date();
+
+    date.setHours(0, 0, 0, 0);
+
+    return date;
+  }
 }

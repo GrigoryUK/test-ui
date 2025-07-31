@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/react-vite';
 import './styles/storybook.css';
 import '../src/styles/main.css';
 
+import { onGetDateDecorator } from './decorators/date.decorator';
 import { onGetThemeDecorator } from './decorators/theme.decorator';
 
 const preview: Preview = {
@@ -15,7 +16,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [onGetThemeDecorator()],
+  decorators: [onGetThemeDecorator(), onGetDateDecorator()],
 };
 
 export default preview;
