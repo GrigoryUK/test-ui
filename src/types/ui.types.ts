@@ -47,3 +47,7 @@ export interface AutoCompleteBaseProps {
   inputProps?: InputProps;
   noOptionsText?: string;
 }
+
+export type UploadFilesFileFormatType = 'PDF' | 'JPG' | 'PNG';
+
+export type UploadFilesMimeType = 'image/png' | 'image/jpg' | 'image/jpeg' | 'application/pdf';

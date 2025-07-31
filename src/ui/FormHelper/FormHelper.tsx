@@ -2,35 +2,33 @@ import React, { FC } from 'react';
 
 import clsx from 'clsx';
 
-import { StyledFormHelperText } from './FormHelperText.styled.ts';
-import { FormHelperTextUiType } from './FormHelperText.types.ts';
+import { StyledFormHelperFormHelperText } from './FormHelper.styled.ts';
+import { FormHelperUiType } from './FormHelper.types.ts';
 import { Collapse } from '../Collapse';
 import { ItemWithTooltip } from '../../hoc';
 import { UiTypeProps } from '../../types';
 
-export interface FormHelperTextProps extends UiTypeProps<typeof FormHelperTextUiType> {
+export interface FormHelperProps extends UiTypeProps<typeof FormHelperUiType> {
   show?: boolean;
   message?: string;
   withoutPadding?: boolean;
-  isError?: boolean;
 }
 
-export const FormHelperText: FC<FormHelperTextProps> = (props) => {
-  const { show = true, message, withoutPadding, uiType, isError } = props;
+export const FormHelper: FC<FormHelperProps> = (props) => {
+  const { show = true, message, withoutPadding, uiType } = props;
 
-  const FormHelperTextWithTooltip = ItemWithTooltip(StyledFormHelperText);
+  const FormHelperTextWithTooltip = ItemWithTooltip(StyledFormHelperFormHelperText);
 
   return (
     <Collapse in={show}>
       <FormHelperTextWithTooltip
         className={clsx(uiType, withoutPadding && 'withoutPadding')}
         itemWithTooltipProps={{
-          disabled: uiType === FormHelperTextUiType.default,
+          disabled: uiType === FormHelperUiType.default,
           content: message,
           font: '12px Manrope',
           extraOffset: 28,
         }}
-        error={isError}
       >
         {message}
       </FormHelperTextWithTooltip>

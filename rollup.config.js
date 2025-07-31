@@ -46,6 +46,9 @@ export default [
       terser(),
     ],
     external: [
+      'react-hook-form',
+      'react-input-mask',
+      'react-dropzone',
       'date-fns',
       '@mui/x-date-pickers',
       'react-verification-input',
