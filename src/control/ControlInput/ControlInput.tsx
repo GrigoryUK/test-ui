@@ -1,25 +1,13 @@
 import React, { ChangeEvent } from 'react';
 import { FieldValues, useController } from 'react-hook-form';
 
-import {
-  ItemWithFormCharacters,
-  ItemWithFormCharactersProps,
-  ItemWithFormError,
-  ItemWithFormErrorProps,
-  ItemWithFormHelper,
-  ItemWithFormHelperProps,
-  ItemWithInputMask,
-  ItemWithInputMaskProps,
-} from '../../hoc';
-import { ControlFiledProps } from '../../types';
+import { ItemWithFormCharacters, ItemWithFormError, ItemWithFormHelper, ItemWithInputMask } from '../../hoc';
+import { ControlFiledProps, PickHocItemsUtility } from '../../types';
 import { Input, InputProps } from '../../ui';
 
 export interface ControlInputProps<T extends FieldValues>
   extends ControlFiledProps<T>,
-    ItemWithInputMaskProps,
-    ItemWithFormCharactersProps,
-    ItemWithFormHelperProps,
-    ItemWithFormErrorProps {
+    PickHocItemsUtility<'formCharacters' | 'formError' | 'formHelper' | 'inputMask'> {
   inputProps?: InputProps;
 }
 
@@ -36,7 +24,7 @@ export const ControlInput = <T extends FieldValues = FieldValues>(props: Control
 
   const InputWithHoc = ItemWithFormError(ItemWithFormHelper(ItemWithFormCharacters(ItemWithInputMask(Input))));
 
-  const { field, fieldState } = useController({
+  const { field, fieldState } = useController<T>({
     ...controlProps,
     name: controlProps.name,
     control: controlProps?.control,

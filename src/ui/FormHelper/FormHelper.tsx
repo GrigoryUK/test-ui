@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { StyledFormHelperFormHelperText } from './FormHelper.styled.ts';
 import { FormHelperUiType } from './FormHelper.types.ts';
 import { Collapse } from '../Collapse';
-import { ItemWithTooltip } from '../../hoc';
+import { ItemWithTooltip } from '../../hoc/ItemWithTooltip';
 import { UiTypeProps } from '../../types';
 
 export interface FormHelperProps extends UiTypeProps<typeof FormHelperUiType> {

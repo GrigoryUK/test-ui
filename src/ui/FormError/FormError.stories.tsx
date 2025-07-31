@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { FormError, FormErrorProps } from './FormError';
-import { FormHelperTextUiType } from '../FormHelperText/FormHelperText.types';
+import { FormErrorUiType } from './FormError.types';
 import { AllVariants, LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof FormError> = {
@@ -12,7 +12,7 @@ const meta: Meta<typeof FormError> = {
   component: FormError,
   tags: ['autodocs'],
   args: {
-    uiType: FormHelperTextUiType.default,
+    uiType: FormErrorUiType.default,
     show: true,
     message: LibraryUtils.getLoremRu(10),
     withoutPadding: false,
@@ -20,7 +20,7 @@ const meta: Meta<typeof FormError> = {
   argTypes: {
     uiType: {
       control: 'select',
-      options: Object.values(FormHelperTextUiType),
+      options: Object.values(FormErrorUiType),
     },
   },
 };
@@ -35,8 +35,8 @@ Default.args = {};
 
 export const All = () => {
   return (
-    <AllVariants<typeof FormHelperTextUiType>
-      uiTypes={FormHelperTextUiType}
+    <AllVariants<typeof FormErrorUiType>
+      uiTypes={FormErrorUiType}
       column={1}
       Component={(uiType) => (
         <Box maxWidth={200}>

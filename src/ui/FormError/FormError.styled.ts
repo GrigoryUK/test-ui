@@ -1,6 +1,6 @@
 import { css, FormHelperText, styled } from '@mui/material';
 
-export const StyledFormHelperText = styled(FormHelperText)(
+export const StyledFormErrorFormHelperText = styled(FormHelperText)(
   () => css`
     width: 100%;
     padding-right: 14px;
