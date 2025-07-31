@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { FieldValues, useController } from 'react-hook-form';
 
+import { ItemWithFormCharacters, ItemWithFormError, ItemWithFormHelper, ItemWithInputMask } from '../../hoc';
 import { ControlFiledProps, PickHocItemsUtility } from '../../types';
 import { Input, InputProps } from '../../ui';
 
@@ -11,9 +12,17 @@ export interface ControlInputProps<T extends FieldValues>
 }
 
 export const ControlInput = <T extends FieldValues = FieldValues>(props: ControlInputProps<T>) => {
-  const { inputProps, controlProps, itemWithFormCharactersProps, onError } = props;
+  const {
+    inputProps,
+    controlProps,
+    itemWithInputMaskProps,
+    itemWithFormHelperProps,
+    itemWithFormErrorProps,
+    itemWithFormCharactersProps,
+    onError,
+  } = props;
 
-  const InputWithHoc = Input;
+  const InputWithHoc = ItemWithFormError(ItemWithFormHelper(ItemWithFormCharacters(ItemWithInputMask(Input))));
 
   const { field, fieldState } = useController<T>({
     ...controlProps,
@@ -90,23 +99,23 @@ export const ControlInput = <T extends FieldValues = FieldValues>(props: Control
       onPaste={onPaste}
       {...controlProps}
       {...inputProps}
-      // itemWithFormErrorProps={{
-      //   show: isError,
-      //   message: fieldState?.error?.message,
-      //   ...itemWithFormErrorProps,
-      // }}
-      // itemWithInputMaskProps={{
-      //   ...itemWithInputMaskProps,
-      // }}
-      // itemWithFormHelperProps={{
-      //   show: !isError && !!itemWithFormHelperProps?.message?.length,
-      //   ...itemWithFormHelperProps,
-      // }}
-      // itemWithFormCharactersProps={{
-      //   isError: isError,
-      //   currentLength: field?.value?.length,
-      //   ...itemWithFormCharactersProps,
-      // }}
+      itemWithFormErrorProps={{
+        show: isError,
+        message: fieldState?.error?.message,
+        ...itemWithFormErrorProps,
+      }}
+      itemWithInputMaskProps={{
+        ...itemWithInputMaskProps,
+      }}
+      itemWithFormHelperProps={{
+        show: !isError && !!itemWithFormHelperProps?.message?.length,
+        ...itemWithFormHelperProps,
+      }}
+      itemWithFormCharactersProps={{
+        isError: isError,
+        currentLength: field?.value?.length,
+        ...itemWithFormCharactersProps,
+      }}
       onChange={onChange}
     />
   );
