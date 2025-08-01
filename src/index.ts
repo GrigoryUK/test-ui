@@ -1,5 +1,4 @@
 export * from './constants';
-export * from './control';
 export * from './helpers';
 export * from './hoc';
 export * from './icons';
