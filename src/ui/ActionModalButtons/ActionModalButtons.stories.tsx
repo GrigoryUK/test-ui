@@ -18,6 +18,7 @@ const meta: Meta<typeof ActionModalButtons> = {
     uiType: ActionModalButtonsUiType.default,
     confirmText: CONFIRM_TEXT,
     cancelText: CANCEL_TEXT,
+    disabled: false,
   },
   argTypes: {
     uiType: {

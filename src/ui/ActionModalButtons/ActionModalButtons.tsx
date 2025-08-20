@@ -8,12 +8,14 @@ import { UiTypeProps } from '../../types';
 export interface ActionModalButtonsProps extends UiTypeProps<typeof ActionModalButtonsUiType> {
   onCancel?: () => void;
   onConfirm?: () => void;
+  disabledCancel?: boolean;
+  disabledConfirm?: boolean;
   cancelText?: string;
   confirmText?: string;
 }
 
 export const ActionModalButtons: FC<ActionModalButtonsProps> = (props) => {
-  const { uiType = ActionModalButtonsUiType.default, cancelText, confirmText, onConfirm, onCancel } = props;
+  const { uiType = ActionModalButtonsUiType.default, cancelText, confirmText, onConfirm, onCancel, disabledCancel, disabledConfirm } = props;
 
   return (
     <StyledActionModalButtonsDialogActions className={uiType}>
@@ -21,6 +23,7 @@ export const ActionModalButtons: FC<ActionModalButtonsProps> = (props) => {
         sx={{
           zIndex: (theme) => theme.zIndex.tooltip + 1,
         }}
+        disabled={disabledCancel}
         uiType={'primary'}
         onClick={() => {
           if (!onCancel) {
@@ -33,6 +36,7 @@ export const ActionModalButtons: FC<ActionModalButtonsProps> = (props) => {
       </Button>
       <Button
         uiType={'shadow'}
+        disabled={disabledConfirm}
         onClick={() => {
           if (!onConfirm) {
             return;
