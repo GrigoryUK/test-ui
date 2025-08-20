@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { Box, BoxProps } from '@mui/material';
 
+import { t } from '../../utils';
 import { Tooltip } from '../../../ui';
 
 export interface AllVariantsProps<T = any> {
@@ -27,6 +28,19 @@ export const AllVariants = <T = any,>(props: AllVariantsProps<T>) => {
       return null;
     }
 
+    const onCopy = (item: any) => {
+      if (navigator.clipboard) {
+        navigator.clipboard
+          .writeText(item)
+          .then(() => {
+            console.log(`${item} ${t['copied to the exchange buffer']}`);
+          })
+          .catch((err) => {
+            console.error(`${t['Copying error']}: `, err);
+          });
+      }
+    };
+
     return options?.map((item, index) => {
       return (
         <Tooltip
@@ -36,6 +50,9 @@ export const AllVariants = <T = any,>(props: AllVariantsProps<T>) => {
           }}
           boxProps={{
             width: 'fit-content',
+            onClick: () => {
+              onCopy(item);
+            },
             ...boxPropsTooltip,
           }}
         >

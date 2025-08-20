@@ -12,10 +12,10 @@ const meta: Meta<typeof ButtonFilters> = {
   component: ButtonFilters,
   tags: ['autodocs'],
   args: {
-    text: TEXT,
+    children: TEXT,
   },
   argTypes: {
-    text: { control: 'text' },
+    children: { control: 'text' },
   },
 };
 

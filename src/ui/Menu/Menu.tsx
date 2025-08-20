@@ -31,12 +31,6 @@ export interface MenuProps {
   className?: string;
 }
 
-const AUTO = 'auto';
-
-const MIN_TIMEOUT = 0;
-
-const Z_MENU = 1005;
-
 export const Menu: FC<MenuProps> = (props) => {
   const {
     customOptions,
@@ -53,6 +47,12 @@ export const Menu: FC<MenuProps> = (props) => {
     timeoutAnimation = AnimationType.normal,
     zIndexPopup,
   } = props;
+
+  const AUTO = 'auto';
+
+  const MIN_TIMEOUT = 0;
+
+  const Z_MENU = 1005;
 
   const open = Boolean(anchorEl);
 

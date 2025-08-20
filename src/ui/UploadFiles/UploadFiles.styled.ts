@@ -26,5 +26,11 @@ export const StyledUploadFilesBox = styled(Box)(
     &.error {
       border: 1px dashed ${theme.palette.error.main};
     }
+
+    .document {
+      color: ${theme.palette.primary.main};
+      width: 24px;
+      height: 24px;
+    }
   `,
 );

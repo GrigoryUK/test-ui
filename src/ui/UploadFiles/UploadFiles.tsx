@@ -89,7 +89,7 @@ export const UploadFiles: FC<UploadFilesProps> = (props) => {
           </Text>
         </Box>
         <Box display={'flex'} alignItems={'center'} gap={0.5} mt={2.5}>
-          <Icon uiType={'icon_main_file'} />
+          <Icon className={'document'} uiType={'icon_document'} />
           <Text color={theme.palette.primary.main} uiType={'text_14_400_primary_06'}>
             {textInfo?.downloadTemplate}
           </Text>

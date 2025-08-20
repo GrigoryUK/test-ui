@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -35,7 +35,7 @@ export default meta;
 type Story = StoryObj<typeof AutocompleteSingle>;
 
 const Template = (args: AutocompleteSingleProps) => {
-  const [value, setValue] = React.useState<number | null>(null);
+  const [value, setValue] = useState<number | null>(null);
 
   useEffect(() => {
     if (args.value === undefined) {
@@ -45,12 +45,12 @@ const Template = (args: AutocompleteSingleProps) => {
     setValue(args.value as any);
   }, [args.value]);
 
-  const onChange = (_: any, value?: OptionItemProps<number>) => {
+  const onChange = (_: any, value?: OptionItemProps) => {
     if (value?.value === undefined) {
       return;
     }
 
-    setValue(value.value);
+    setValue(Number(value.value));
   };
 
   return (

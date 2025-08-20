@@ -33,6 +33,8 @@ export default [
         tsconfig: './tsconfig.json',
         exclude: [
           '**/library-helpers/**',
+          '**/*.test.ts',
+          '**/*.test.tsx',
           '**/*.stories.tsx',
           '**/*.stories.ts',
           '**/*.stories.mdx',
@@ -46,6 +48,10 @@ export default [
       terser(),
     ],
     external: [
+      'uuid',
+      'qs',
+      'lodash',
+      '@mui/system',
       'react-input-mask',
       'react-dropzone',
       'date-fns',

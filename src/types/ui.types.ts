@@ -51,3 +51,40 @@ export interface AutoCompleteBaseProps {
 export type UploadFilesFileFormatType = 'PDF' | 'JPG' | 'PNG';
 
 export type UploadFilesMimeType = 'image/png' | 'image/jpg' | 'image/jpeg' | 'application/pdf';
+
+export interface BaseFilterConfigProps {
+  value: string;
+  subtitle: string;
+  placeholder?: string;
+  width?: number;
+}
+
+export interface MultiSelectFilterConfigProps extends BaseFilterConfigProps {
+  type: 'multiSelect';
+  options: OptionItemProps[];
+}
+
+export interface DateRangeFilterConfigProps extends BaseFilterConfigProps {
+  type: 'dateRange';
+}
+
+export interface InputFilterConfigProps extends BaseFilterConfigProps {
+  type: 'input';
+}
+
+export interface SingleSelectFilterConfigProps extends BaseFilterConfigProps {
+  type: 'singleSelect';
+  options: OptionItemProps[];
+}
+
+export interface DateFilterConfigProps extends BaseFilterConfigProps {
+  type: 'singleSelect';
+  options: OptionItemProps[];
+}
+
+export type ConfigFilterProps =
+  | MultiSelectFilterConfigProps
+  | DateRangeFilterConfigProps
+  | InputFilterConfigProps
+  | SingleSelectFilterConfigProps
+  | DateFilterConfigProps;

@@ -12,7 +12,7 @@ const meta: Meta<typeof ButtonDate> = {
   component: ButtonDate,
   tags: ['autodocs'],
   args: {
-    text: TEXT,
+    children: TEXT,
     disabled: false,
     value: false,
   },
@@ -27,7 +27,7 @@ const meta: Meta<typeof ButtonDate> = {
       },
     },
     disabled: { control: 'boolean' },
-    text: { control: 'text' },
+    children: { control: 'text' },
     onChange: { action: 'changed' },
   },
 };

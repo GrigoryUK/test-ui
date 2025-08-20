@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
     deepBlue: MuiPalette['primary'];
     customWarning: MuiPalette['primary'];
     lightGray: MuiPalette['primary'];
+    lightBlue: MuiPalette['primary'];
   }
 
   interface PaletteOptions {
@@ -15,5 +16,18 @@ declare module '@mui/material/styles' {
     deepBlue: MuiPaletteOptions['primary'];
     customWarning: MuiPaletteOptions['primary'];
     lightGray: MuiPaletteOptions['primary'];
+    lightBlue: MuiPaletteOptions['primary'];
+  }
+
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    mobile: true;
+    tablet: true;
+    laptop: true;
+    desktop: true;
   }
 }

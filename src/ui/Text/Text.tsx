@@ -48,6 +48,7 @@ export const Text: FC<TextProps> = (props) => {
     [TextUiType.title_24_600_primary]: onGetStyles(24, 600, theme.palette.text.primary),
     [TextUiType.title_20_600_primary]: onGetStyles(20, 600, theme.palette.text.primary),
     [TextUiType.title_20_600_primary_087]: onGetStyles(20, 600, theme.palette.text.primary, 0.87),
+    [TextUiType.title_20_500_primary_087]: onGetStyles(20, 500, theme.palette.text.primary, 0.87),
     [TextUiType.subtitle_16_700_primary_087]: onGetStyles(16, 700, theme.palette.text.primary, 0.87),
     [TextUiType.subtitle_16_600_primary]: onGetStyles(16, 600, theme.palette.text.primary),
     [TextUiType.subtitle_16_600_primary_087]: onGetStyles(16, 600, theme.palette.text.primary, 0.87),

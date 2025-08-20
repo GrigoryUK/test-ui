@@ -12,12 +12,12 @@ const meta: Meta<typeof DatePicker> = {
   tags: ['autodocs'],
   args: {
     value: LibraryUtils.getToday(),
-    dateFormat: DateUtils.getStringDdMmYyyy(),
+    dateFormat: DateUtils().getStringDdMmYyyy(),
     minDate: LibraryUtils.getToday(),
     maxDate: (function () {
       const date = LibraryUtils.getToday();
 
-      return DateUtils.addDays(date, 7);
+      return DateUtils().addDays(date, 7);
     })(),
     disabled: false,
     disableFuture: false,
@@ -26,7 +26,7 @@ const meta: Meta<typeof DatePicker> = {
   },
   argTypes: {
     value: { control: 'date' },
-    dateFormat: { control: 'select', options: [DateUtils.getStringDdMmYyyy()] },
+    dateFormat: { control: 'select', options: [DateUtils().getStringDdMmYyyy()] },
   },
 };
 

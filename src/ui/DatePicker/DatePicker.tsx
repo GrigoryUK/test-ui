@@ -23,7 +23,21 @@ export interface DatePickerProps extends DatePickerPropsMui {
 const icon = () => <Icon uiType={'icon_calendar'} width={32} height={32} />;
 
 export const DatePicker: FC<DatePickerProps> = (props) => {
-  const { name, label, className, value, onChange, minDate, maxDate, dateFormat, allowInput, ...otherProps } = props;
+  const {
+    name,
+    label,
+    className,
+    value,
+    onChange,
+    minDate,
+    maxDate,
+    dateFormat,
+    allowInput,
+    disableFuture,
+    ...otherProps
+  } = props;
+
+  const dateUtils = DateUtils();
 
   return (
     <StyledDatePickerDesktopDatePicker
@@ -37,7 +51,8 @@ export const DatePicker: FC<DatePickerProps> = (props) => {
       className={clsx(className)}
       minDate={minDate}
       maxDate={maxDate}
-      format={dateFormat ?? DateUtils.getStringDdMmYyyy()}
+      disableFuture={disableFuture}
+      format={dateFormat ?? dateUtils.getStringDdMmYyyy()}
       {...otherProps}
       slotProps={{
         textField: {

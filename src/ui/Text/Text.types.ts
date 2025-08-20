@@ -3,6 +3,7 @@ export const TextUiType = {
   title_24_600_primary: 'title_24_600_primary',
   title_20_600_primary: 'title_20_600_primary',
   title_20_600_primary_087: 'title_20_600_primary_087',
+  title_20_500_primary_087: 'title_20_500_primary_087',
   subtitle_16_700_primary_087: 'subtitle_16_700_primary_087',
   subtitle_16_600_primary: 'subtitle_16_600_primary',
   subtitle_16_600_primary_087: 'subtitle_16_600_primary_087',

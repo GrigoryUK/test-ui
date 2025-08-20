@@ -1,6 +1,6 @@
 import { OptionItemProps } from '../types';
 
-export const onGetOptionLabel = <T extends OptionItemProps>(option: T | string) => {
+export const getOptionLabel = <T extends OptionItemProps>(option: T | string) => {
   if (!option) {
     return '';
   }

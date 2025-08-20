@@ -7,6 +7,14 @@ import { LibraryUtils, t } from '../../library-helpers';
 
 const arr = LibraryUtils.createArray();
 
+const options: ToggleSwitcherOptionProps[] = arr.map((item) => {
+  return {
+    value: item,
+    content: `${t['Tab']} ${item}`,
+    key: item,
+  };
+});
+
 const meta: Meta<typeof ToggleSwitcher> = {
   title: 'UI/ToggleSwitcher',
   component: ToggleSwitcher,
@@ -15,9 +23,12 @@ const meta: Meta<typeof ToggleSwitcher> = {
     value: 0,
     disabled: false,
     isError: false,
+    width: '100%',
+    options: options,
   },
   argTypes: {
     value: { control: 'select', options: arr },
+    width: { control: 'text' },
   },
 };
 
@@ -27,14 +38,6 @@ type Story = StoryObj<typeof ToggleSwitcher>;
 
 const Template = (args: ToggleSwitcherProps) => {
   const [value, setValue] = useState<number>(arr[0] as any);
-
-  const options: ToggleSwitcherOptionProps[] = arr.map((item) => {
-    return {
-      value: item,
-      content: `${t['Tab']} ${item}`,
-      key: item,
-    };
-  });
 
   useEffect(() => {
     if (args.value === undefined) {

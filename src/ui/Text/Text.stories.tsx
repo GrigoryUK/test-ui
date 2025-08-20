@@ -18,6 +18,16 @@ const meta: Meta<typeof Text> = {
       control: { type: 'select' },
       options: Object.values(TextUiType),
     },
+    fontSize: { control: 'number' },
+    fontWeight: {
+      control: 'select',
+      options: (function () {
+        return LibraryUtils.createArray(9).map((item) => `${item + 1}00`);
+      })(),
+    },
+    color: {
+      control: 'color',
+    },
     children: { control: 'text' },
   },
 };

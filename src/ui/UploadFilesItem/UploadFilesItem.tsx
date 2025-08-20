@@ -12,15 +12,15 @@ export interface UploadFilesItemProps {
   onClick?: () => void;
   isCopy?: boolean;
   maxWidth?: string | number;
-  copyText: {
-    textBeforeCopy: string;
-    textAfterCopy: string;
+  copyText?: {
+    textBeforeCopy?: string;
+    textAfterCopy?: string;
   };
 }
 
-const DEFAULT_DELAY = 2000;
-
 export const UploadFilesItem: FC<UploadFilesItemProps> = (props) => {
+  const DEFAULT_DELAY = 2000;
+
   const { fileName, isCopy, onClick, copyText, maxWidth } = props;
 
   const [copied, setCopied] = useState(false);
@@ -79,7 +79,7 @@ export const UploadFilesItem: FC<UploadFilesItemProps> = (props) => {
         <BoxWithHoc
           display={'flex'}
           itemWithTooltipProps={{
-            content: copied ? copyText.textAfterCopy : copyText.textBeforeCopy,
+            content: (copied ? copyText?.textAfterCopy : copyText?.textBeforeCopy) ?? '',
             hoverForced: true,
           }}
         >

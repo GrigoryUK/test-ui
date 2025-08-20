@@ -3,7 +3,7 @@ import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { InfoNotice, InfoNoticeProps } from './InfoNotice';
-import { Icon } from '../../icons';
+import { IconMaterial } from '../../icons';
 import { LibraryUtils } from '../../library-helpers';
 
 const meta: Meta<typeof InfoNotice> = {
@@ -12,7 +12,7 @@ const meta: Meta<typeof InfoNotice> = {
   tags: ['autodocs'],
   args: {
     text: LibraryUtils.getLoremRu(),
-    icon: <Icon uiType={'icon_alert'} width={22} height={22} />,
+    icon: <IconMaterial uiType={'icon_info_outlined'} sx={{ fontSize: 22 }} />,
   },
   argTypes: {},
 };

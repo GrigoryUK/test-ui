@@ -1,22 +1,19 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 
-import { onGetTheme } from '../../src';
+import { getTheme } from '../../src';
 
 export const onGetThemeDecorator = () => {
-  const advertiser = createTheme({ ...onGetTheme('advertiser') });
+  const light = createTheme({ ...getTheme('light') });
 
-  const advertiserDark = createTheme({ ...onGetTheme('advertiserDark') });
-
-  const operator = createTheme({ ...onGetTheme() });
+  const dark = createTheme({ ...getTheme('dark') });
 
   return withThemeFromJSXProvider({
     themes: {
-      advertiser: advertiser,
-      advertiserDark: advertiserDark,
-      operator: operator,
+      light: light,
+      dark: dark,
     },
-    defaultTheme: 'advertiser',
+    defaultTheme: 'light',
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   });

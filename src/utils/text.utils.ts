@@ -1,15 +1,15 @@
-let canvasInstants: HTMLElement;
+export const TextUtils = () => {
+  let canvasInstants: HTMLElement | null = null;
 
-const memorizedContainer: any = {};
+  const memorizedContainer: Record<string, number> = {};
 
-export class TextUtils {
   /**
    * Метод возвращает ширину строки
    * @param text - строка
    * @param font - шрифт
    * @param roundUp
    */
-  public static getWidth(text: string, font = '16px Manrope', roundUp = true): number {
+  const getWidth = (text: string, font = '16px Manrope', roundUp = true) => {
     let canvas: any;
 
     if (memorizedContainer[`${text}-${font}`]) {
@@ -30,5 +30,9 @@ export class TextUtils {
     memorizedContainer[`${text}-${font}`] = roundUp ? Math.round(metrics.width) : metrics.width;
 
     return memorizedContainer[`${text}-${font}`];
-  }
-}
+  };
+
+  return {
+    getWidth,
+  };
+};

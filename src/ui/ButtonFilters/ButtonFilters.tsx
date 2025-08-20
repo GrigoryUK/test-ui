@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Box } from '@mui/material';
 import clsx from 'clsx';
@@ -7,18 +7,18 @@ import { StyledButtonFiltersBox } from './ButtonFilters.styled';
 import { Icon } from '../../icons';
 
 export interface ButtonFiltersProps {
-  text?: string;
+  children?: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
 }
 
 export const ButtonFilters: FC<ButtonFiltersProps> = (props) => {
-  const { onClick, disabled, text } = props;
+  const { onClick, disabled, children } = props;
 
   return (
     <StyledButtonFiltersBox className={clsx(disabled && 'disabled')} onClick={onClick}>
       <Icon uiType={'icon_filters'} width={20} />
-      <Box>{text}</Box>
+      <Box>{children}</Box>
     </StyledButtonFiltersBox>
   );
 };

@@ -66,6 +66,19 @@ export const All = () => {
     },
   ];
 
+  const onCopy = (item: any) => {
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(item)
+        .then(() => {
+          console.log(`${item} ${t['copied to the exchange buffer']}`);
+        })
+        .catch((err) => {
+          console.error(`${t['Copying error']}: `, err);
+        });
+    }
+  };
+
   return (
     <AllVariants
       maxWidth={300}
@@ -77,6 +90,11 @@ export const All = () => {
                 key={`${item.variants}__${item.type}`}
                 itemWithTooltipProps={{
                   content: `${item.type}`,
+                }}
+                boxProps={{
+                  onClick: () => {
+                    onCopy(item.type);
+                  },
                 }}
               >
                 <Button uiType={item.type} variant={item.variants as any}>

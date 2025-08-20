@@ -14,9 +14,9 @@ export interface SearchProps {
   placeholder?: string;
 }
 
-const TIMEOUT = 1000;
-
 export const Search: FC<SearchProps> = (props) => {
+  const TIMEOUT = 1000;
+
   const { onChange, value, disabled, placeholder } = props;
 
   const [valueState, setValueState] = useState<string>('');
@@ -30,7 +30,7 @@ export const Search: FC<SearchProps> = (props) => {
   }, [value]);
 
   const onChangeDebounce = useCallback(
-    ToolboxUtils.debounce((value: string) => {
+    ToolboxUtils().debounce((value: string) => {
       if (onChange && !disabled) {
         onChange(value);
       }

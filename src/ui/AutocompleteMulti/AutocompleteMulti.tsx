@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import {
   Autocomplete,
@@ -11,35 +11,27 @@ import {
 import { AutocompleteOption } from '../AutocompleteOption';
 import { Input } from '../Input';
 import { DEFAULT_MAX_WIDTH_AUTOCOMPLETE } from '../../constants';
-import { onGetOptionLabel } from '../../helpers';
+import { getOptionLabel } from '../../helpers';
 import { ItemWithTooltip } from '../../hoc';
 import { AutoCompleteBaseProps, OptionItemProps, OptionValue } from '../../types';
 
-export interface AutocompleteMultiProps<
-  Value extends OptionValue = OptionValue,
-  Option extends OptionItemProps<Value> = OptionItemProps<Value>,
-> extends AutoCompleteBaseProps {
-  options?: Option[];
+export interface AutocompleteMultiProps<T extends OptionValue = OptionValue> extends AutoCompleteBaseProps {
+  options?: OptionItemProps<T>[];
   onChange?: (
-    event: React.SyntheticEvent,
-    value: Value[],
-    reason: AutocompleteChangeReason,
-    details?: AutocompleteChangeDetails<Option>,
+    event: SyntheticEvent,
+    value: T[],
+    reason?: AutocompleteChangeReason,
+    details?: AutocompleteChangeDetails<OptionItemProps<T>>,
   ) => void;
-  value?: Value[];
+  value?: T[];
   autoCompleteProps?: Omit<
     Partial<AutocompleteProps<any, true, any, false>>,
-    'value' | 'options' | 'disabled' | 'onChange'
+    'value' | 'options' | 'disabled' | 'onChange' | 'noOptionsText'
   >;
   withoutCheckboxes?: boolean;
 }
 
-export const AutocompleteMulti = <
-  Value extends OptionValue,
-  Option extends OptionItemProps<Value> = OptionItemProps<Value>,
->(
-  props: AutocompleteMultiProps<Value, Option>,
-) => {
+export const AutocompleteMulti = <T extends OptionValue = OptionValue>(props: AutocompleteMultiProps<T>) => {
   const {
     onChange,
     onClear,
@@ -59,9 +51,9 @@ export const AutocompleteMulti = <
 
   const ChipWithHoc = ItemWithTooltip(Chip);
 
-  const [multiValues, setMultiValues] = useState<Option[]>([]);
+  const [multiValues, setMultiValues] = useState<OptionItemProps<T>[]>([]);
 
-  const [currentOptions, setCurrentOptions] = useState<Option[]>([]);
+  const [currentOptions, setCurrentOptions] = useState<OptionItemProps<T>[]>([]);
 
   const [input, setInput] = useState<string>('');
 
@@ -77,16 +69,16 @@ export const AutocompleteMulti = <
       }
 
       return acc;
-    }, [] as Option[]);
+    }, [] as OptionItemProps<T>[]);
 
     setMultiValues(selectedOptions);
   }, [currentOptions, value]);
 
   const onChangeOption = (
-    event: React.SyntheticEvent,
-    values: Option[],
-    reason: AutocompleteChangeReason,
-    details: AutocompleteChangeDetails<Option>,
+    event: SyntheticEvent,
+    values: OptionItemProps<T>[],
+    reason?: AutocompleteChangeReason,
+    details?: AutocompleteChangeDetails<OptionItemProps<T>>,
   ) => {
     const selectedValue = values?.map((item) => item?.value) ?? [];
     setMultiValues(values);
@@ -110,7 +102,7 @@ export const AutocompleteMulti = <
       }}
       value={multiValues}
       onChange={(event, value, reason, details) => {
-        onChangeOption(event, value, reason, details as AutocompleteChangeDetails<Option>);
+        onChangeOption(event, value, reason, details as AutocompleteChangeDetails<OptionItemProps<T>>);
       }}
       options={currentOptions}
       renderTags={(value, getTagProps) => {
@@ -150,7 +142,7 @@ export const AutocompleteMulti = <
 
         return option.value === value.value;
       }}
-      getOptionLabel={onGetOptionLabel}
+      getOptionLabel={getOptionLabel}
       sx={{
         maxWidth: maxWidth ?? DEFAULT_MAX_WIDTH_AUTOCOMPLETE,
         width: '100%',

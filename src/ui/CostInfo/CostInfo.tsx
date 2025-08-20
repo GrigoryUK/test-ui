@@ -30,7 +30,7 @@ export const CostInfo: FC<CostInfoProps> = (props) => {
       }}
     >
       <StyledCostInfoBox className={clsx(disabled && 'disabled')}>
-        <Icon uiType={'icon_info_segmentation'} />
+        <Icon uiType={'icon_info'} />
       </StyledCostInfoBox>
     </Tooltip>
   );

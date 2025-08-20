@@ -1,50 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import { Autocomplete, AutocompleteChangeDetails, AutocompleteChangeReason, AutocompleteProps } from '@mui/material';
 
 import { AutocompleteOption } from '../AutocompleteOption';
 import { Input } from '../Input';
 import { DEFAULT_MAX_WIDTH_AUTOCOMPLETE } from '../../constants';
-import { onGetOptionLabel } from '../../helpers';
+import { getOptionLabel } from '../../helpers';
 import { AutoCompleteBaseProps, OptionItemProps, OptionValue } from '../../types';
 
-export interface AutocompleteSingleProps<
-  Value extends OptionValue = OptionValue,
-  Option extends OptionItemProps<Value> = OptionItemProps<Value>,
-> extends AutoCompleteBaseProps {
-  options?: Option[];
+export interface AutocompleteSingleProps<T extends OptionValue = OptionValue> extends AutoCompleteBaseProps {
+  options?: OptionItemProps<T>[];
   onChange?: (
-    event: React.SyntheticEvent,
-    value: Option,
-    reason: AutocompleteChangeReason,
-    details?: AutocompleteChangeDetails<Option>,
+    event: SyntheticEvent,
+    value: OptionItemProps<T>,
+    reason?: AutocompleteChangeReason,
+    details?: AutocompleteChangeDetails<OptionItemProps<T>>,
   ) => void;
-  value?: Value | null;
+  value?: T;
   autoCompleteProps?: Omit<
     Partial<AutocompleteProps<any, false, any, false>>,
-    'value' | 'options' | 'onChange' | 'disabled'
+    'value' | 'options' | 'onChange' | 'disabled' | 'noOptionsText'
   >;
 }
 
-export const AutocompleteSingle = <
-  Value extends OptionValue,
-  Option extends OptionItemProps<Value> = OptionItemProps<Value>,
->({
-  onChange,
-  onClear,
-  label,
-  options = [],
-  maxWidth,
-  placementList,
-  autoCompleteProps,
-  withHighlightText,
-  disableClearable,
-  disabled,
-  value,
-  inputProps,
-  noOptionsText,
-}: AutocompleteSingleProps<Value, Option>) => {
-  const [currentValue, setCurrentValue] = useState<Option>(null as any);
+export const AutocompleteSingle = <T extends OptionValue = OptionValue>(props: AutocompleteSingleProps<T>) => {
+  const {
+    onChange,
+    onClear,
+    label,
+    options = [],
+    maxWidth,
+    placementList,
+    autoCompleteProps,
+    withHighlightText,
+    disableClearable,
+    disabled,
+    value,
+    inputProps,
+    noOptionsText,
+  } = props;
+
+  const [currentValue, setCurrentValue] = useState<OptionItemProps<T>>(null as any);
 
   useEffect(() => {
     const currentOption = options.find((option) => option.value === value) ?? (null as any);
@@ -52,10 +48,10 @@ export const AutocompleteSingle = <
   }, [options, value]);
 
   const onChangeOption = (
-    event: React.SyntheticEvent,
+    event: SyntheticEvent,
     newValue: any,
-    reason: AutocompleteChangeReason,
-    details?: AutocompleteChangeDetails<Option>,
+    reason?: AutocompleteChangeReason,
+    details?: AutocompleteChangeDetails<OptionItemProps<T>>,
   ) => {
     onChange?.(event, newValue, reason, details);
 
@@ -82,7 +78,7 @@ export const AutocompleteSingle = <
         />
       )}
       disableClearable={disableClearable}
-      getOptionLabel={onGetOptionLabel}
+      getOptionLabel={getOptionLabel}
       isOptionEqualToValue={(option, val) => option.value === val?.value}
       getOptionDisabled={(option) => !!option.disabled}
       noOptionsText={noOptionsText}

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { alpha, Box, useTheme } from '@mui/material';
+import { alpha, Box, FabProps, useTheme } from '@mui/material';
 import clsx from 'clsx';
 
 import { StyledToggleSwitcherFab } from './ToggleSwitcher.styled';
@@ -15,10 +15,12 @@ export interface ToggleSwitcherProps {
   onChange?: (value: OptionValue) => void;
   disabled?: boolean;
   isError?: boolean;
+  width?: number | string;
+  fabProps?: FabProps;
 }
 
 export const ToggleSwitcher: FC<ToggleSwitcherProps> = (props) => {
-  const { options, isError, disabled, value, onChange } = props;
+  const { options, isError, disabled, value, onChange, width = 1, fabProps } = props;
 
   const theme = useTheme();
 
@@ -47,7 +49,7 @@ export const ToggleSwitcher: FC<ToggleSwitcherProps> = (props) => {
       gap={'7px'}
       padding={0.5}
       borderRadius={2}
-      width={1}
+      width={width}
       bgcolor={alpha(theme.palette.action.disabled, 0.05)}
     >
       {options.map((item) => {
@@ -62,6 +64,7 @@ export const ToggleSwitcher: FC<ToggleSwitcherProps> = (props) => {
             }}
             className={clsx(variant, (isError || item?.isError) && 'error')}
             color={variant}
+            {...fabProps}
           >
             {item.content}
           </StyledToggleSwitcherFab>

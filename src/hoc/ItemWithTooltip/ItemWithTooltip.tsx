@@ -16,9 +16,9 @@ import { Property } from 'csstype';
 import { AnimationType, TimeoutProps } from '../../types';
 import { TextUtils } from '../../utils';
 
-interface TooltipProps {
+export interface TooltipHocProps {
   content?: ReactNode;
-  tooltipProps?: TooltipProps;
+  tooltipProps?: TooltipPropsMui;
   pointerEvents?: Property.PointerEvents;
   extraOffset?: number;
   disabled?: boolean;
@@ -36,22 +36,22 @@ interface TooltipProps {
 }
 
 export interface ItemWithTooltipProps {
-  itemWithTooltipProps?: TooltipProps;
+  itemWithTooltipProps?: TooltipHocProps;
 }
 
-const DEFAULT_FONT = '16px Manrope';
-
-const MIN_TIMEOUT = 0;
-
-const DEFAULT_TIMEOUT = 200;
-
-const DEFAULT_OFFSET_TEXT = 20;
-
-const DEFAULT_OFFSET_TOOLTIP = [0, -8];
-
-const DEFAULT_MAX_WIDTH = 400;
-
 export const ItemWithTooltip = <P extends object>(WrappedComponent: ComponentType<P & ItemWithTooltipProps>) => {
+  const DEFAULT_FONT = '16px Manrope';
+
+  const MIN_TIMEOUT = 0;
+
+  const DEFAULT_TIMEOUT = 200;
+
+  const DEFAULT_OFFSET_TEXT = 20;
+
+  const DEFAULT_OFFSET_TOOLTIP = [0, -8];
+
+  const DEFAULT_MAX_WIDTH = 400;
+
   const HocItemWithTooltip: FC<P & ItemWithTooltipProps> = ({ itemWithTooltipProps, ...props }) => {
     const [open, setOpen] = useState<boolean>(false);
 
@@ -90,13 +90,19 @@ export const ItemWithTooltip = <P extends object>(WrappedComponent: ComponentTyp
           break;
         }
         case 'string': {
-          const textWidth = TextUtils.getWidth(title, itemWithTooltipProps?.font ?? DEFAULT_FONT);
-          setOpen(Boolean(wrappedComponentWidth < textWidth + currentOffset));
+          const textWidth = TextUtils().getWidth(title, itemWithTooltipProps?.font ?? DEFAULT_FONT);
+
+          if (textWidth) {
+            setOpen(Boolean(wrappedComponentWidth < textWidth + currentOffset));
+          }
           break;
         }
         case 'number': {
-          const textWidth = TextUtils.getWidth(title.toString(), itemWithTooltipProps?.font ?? DEFAULT_FONT);
-          setOpen(Boolean(wrappedComponentWidth < textWidth + currentOffset));
+          const textWidth = TextUtils().getWidth(title.toString(), itemWithTooltipProps?.font ?? DEFAULT_FONT);
+
+          if (textWidth) {
+            setOpen(Boolean(wrappedComponentWidth < textWidth + currentOffset));
+          }
           break;
         }
         default: {
