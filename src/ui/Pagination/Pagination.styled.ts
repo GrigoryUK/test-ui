@@ -2,7 +2,7 @@ import { alpha, Box, css, styled } from '@mui/material';
 
 export const StyledPaginationBox = styled(Box)(
   ({ theme }) => css`
-    padding: 12px 30px;
+    padding: 12px 16px;
     width: 100%;
     overflow-x: hidden;
     position: absolute;

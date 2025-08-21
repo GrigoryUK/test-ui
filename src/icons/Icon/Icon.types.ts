@@ -47,4 +47,5 @@ export const IconUiType = {
   icon_flag_usa: 'icon_flag_usa',
   icon_flag_uzbekistan: 'icon_flag_uzbekistan',
   icon_flag_kazakhstan: 'icon_flag_kazakhstan',
+    icon_bill_check: 'icon_bill_check',
 } as const;

@@ -40,7 +40,7 @@ export const InfoPlate: FC<InfoPlateProps> = (props) => {
           }}
         >
           {items.map((info: InfoPlateItemProps, idx) => (
-            <Box key={idx} display={'flex'} flexDirection={'column'} gap={1}>
+            <Box key={idx} display={'flex'} flexDirection={'column'}>
               <Box display={'flex'} alignItems={'center'} gap={0.5}>
                 {info.isLoading ? (
                   <Loader

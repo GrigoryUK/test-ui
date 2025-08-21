@@ -141,7 +141,7 @@ export const FiltersPanel: FC<FiltersPanelProps> = (props) => {
     return (
       <>
         {content}
-        {index !== configLength - 1 && <Divider />}
+        {index !== configLength - 1 && <Divider sx={{mt: 3}} />}
       </>
     );
   };

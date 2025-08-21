@@ -34,6 +34,7 @@ export { ReactComponent as IconNotification } from '../../../assets/icon-notific
 export { ReactComponent as IconPhone } from '../../../assets/icon-phone.svg';
 export { ReactComponent as IconPhoneConnection } from '../../../assets/icon-phone-connection.svg';
 export { ReactComponent as IconPlus } from '../../../assets/icon-plus.svg';
+export { ReactComponent as IconBillCheck } from '../../../assets/icon-bill-check.svg';
 export { ReactComponent as IconReorder } from '../../../assets/icon-reorder.svg';
 export { ReactComponent as IconRuble } from '../../../assets/icon-ruble.svg';
 export { ReactComponent as IconSim } from '../../../assets/icon-sim.svg';

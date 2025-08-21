@@ -55,6 +55,7 @@ const iconComponentsMap: Record<keyof typeof IconUiType, any> = {
   [IconUiType.icon_flag_usa]: Icons.IconFlagUsa,
   [IconUiType.icon_flag_uzbekistan]: Icons.IconFlagUzbekistan,
   [IconUiType.icon_flag_kazakhstan]: Icons.IconFlagKazakhstan,
+    [IconUiType.icon_bill_check]: Icons.IconBillCheck,
 };
 
 export const Icon: FC<IconProps> = ({ uiType, ...otherProps }) => {
