@@ -7,8 +7,10 @@ import { UiTypeProps } from '../../types';
 export interface IconProps extends Required<UiTypeProps<typeof IconUiType>>, SVGProps<any> {}
 
 const iconComponentsMap: Record<keyof typeof IconUiType, any> = {
+    [IconUiType.icon_play]: Icons.IconPlay,
+   [IconUiType.icon_stop]: Icons.IconStop,
   [IconUiType.icon_account]: Icons.IconAccount,
-  [IconUiType.icon_advertising_companies]: Icons.IconAdvertisingCompanies,
+  [IconUiType.icon_chat]: Icons.IconChat,
   [IconUiType.icon_arrow_show_more]: Icons.IconArrowShowMore,
   [IconUiType.icon_arrow_up]: Icons.IconArrowUp,
   [IconUiType.icon_arrow_asc_up]: Icons.IconArrowAscUp,

@@ -1,6 +1,6 @@
 export const IconUiType = {
   icon_account: 'icon_account',
-  icon_advertising_companies: 'icon_advertising_companies',
+  icon_chat: 'icon_chat',
   icon_arrow_show_more: 'icon_arrow_show_more',
   icon_arrow_up: 'icon_arrow_up',
   icon_arrow_asc_down: 'icon_arrow_asc_down',
@@ -47,5 +47,7 @@ export const IconUiType = {
   icon_flag_usa: 'icon_flag_usa',
   icon_flag_uzbekistan: 'icon_flag_uzbekistan',
   icon_flag_kazakhstan: 'icon_flag_kazakhstan',
-    icon_bill_check: 'icon_bill_check',
+  icon_bill_check: 'icon_bill_check',
+  icon_stop: 'icon_stop',
+  icon_play: 'icon_play',
 } as const;

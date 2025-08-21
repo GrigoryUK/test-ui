@@ -1,5 +1,5 @@
 export { ReactComponent as IconAccount } from '../../../assets/icon-account.svg';
-export { ReactComponent as IconAdvertisingCompanies } from '../../../assets/icon-advertising-companies.svg';
+export { ReactComponent as IconChat } from '../../../assets/icon-chat.svg';
 export { ReactComponent as IconArrowShowMore } from '../../../assets/icon-arrow-show-more.svg';
 export { ReactComponent as IconArrowUp } from '../../../assets/icon-arrow-up.svg';
 export { ReactComponent as IconArrowAscDown } from '../../../assets/icon-asc-arrow.svg';
@@ -47,3 +47,5 @@ export { ReactComponent as IconUser } from '../../../assets/icon-user.svg';
 export { ReactComponent as IconUserSuccess } from '../../../assets/icon-user-success.svg';
 export { ReactComponent as IconWarning } from '../../../assets/icon-warning.svg';
 export { ReactComponent as IconWifi } from '../../../assets/icon-wifi.svg';
+export { ReactComponent as IconPlay } from '../../../assets/icon-play.svg';
+export { ReactComponent as IconStop } from '../../../assets/icon-stop.svg';
