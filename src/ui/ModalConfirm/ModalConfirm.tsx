@@ -18,7 +18,7 @@ export const ModalConfirm: FC<ModalConfirmProps> = (props) => {
       onConfirm={actionModalButtonsProps?.onConfirm}
       confirmText={actionModalButtonsProps?.confirmText}
       cancelText={actionModalButtonsProps?.cancelText}
-      onCancel={actionModalButtonsProps?.onConfirm}
+      onCancel={actionModalButtonsProps?.onCancel}
     />
   );
 
