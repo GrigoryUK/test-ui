@@ -4,3 +4,4 @@ export * from './queryParams.utils.ts';
 export * from './text.utils.ts';
 export * from './toolbox.utils.ts';
 export * from './uuid.utils.ts';
+export * from './numeral.utils.ts';

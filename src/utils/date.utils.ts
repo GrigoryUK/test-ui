@@ -1,4 +1,4 @@
-import { addDays as addDaysFns, format } from 'date-fns';
+import { addDays as addDaysFns, format, parse } from 'date-fns';
 import { ru } from 'date-fns/locale';
 
 export const DateUtils = () => {
@@ -57,12 +57,39 @@ export const DateUtils = () => {
     return 'dd.MM.yyyy';
   };
 
+
+  /**
+   * Возвращает строку с временем "часы:минуты"
+   * @returns String (например, "09:00:00" -> "09:00")
+   */
+  const sliceSeconds = (time: string): string => {
+    const parseTime = parse(time, 'HH:mm:ss', new Date());
+
+    return format(parseTime, 'HH:mm');
+  }
+
+
+  /**
+   * Форматирует дату в строку формата "дд.мм.гг"
+   * @param {string | Date} date - Дата для форматирования
+   * @returns {string | null} Отформатированная строка даты (например, "31.12.23") или null, если дата не передана
+   */
+  const formatDateToDdMmYy = (date: string | Date): string | null => {
+    if (!date) {
+      return null;
+    }
+
+    return format(date, 'dd.MM.yy');
+  }
+
   return {
+    formatDateToDdMmYy,
     formatDateToDdMmYyHhMm,
     getStringDdMmYyyy,
     addDays,
     getDateDdMmYyHhMmSs,
     formatDateToDdMmYyHmm,
     formatDateToDdMmYyyy,
+    sliceSeconds,
   };
 };

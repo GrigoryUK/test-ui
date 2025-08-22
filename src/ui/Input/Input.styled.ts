@@ -12,6 +12,10 @@ export const StyledInput = styled(TextField)(
     }
 
     &.third {
+  input:-webkit-autofill {
+        box-shadow: inset 0 0 0 1000px ${theme.palette.grey[200]};
+      }
+
       .MuiInputBase-root {
         background: ${alpha(theme.palette.divider, 0.06)};
       }

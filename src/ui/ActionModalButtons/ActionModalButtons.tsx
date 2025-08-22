@@ -24,6 +24,7 @@ export const ActionModalButtons: FC<ActionModalButtonsProps> = (props) => {
           zIndex: (theme) => theme.zIndex.tooltip + 1,
         }}
         disabled={disabledCancel}
+        variant={'text'}
         uiType={'primary'}
         onClick={() => {
           if (!onCancel) {

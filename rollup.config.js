@@ -48,6 +48,7 @@ export default [
       terser(),
     ],
     external: [
+      'numeral',
       'uuid',
       'qs',
       'lodash',
